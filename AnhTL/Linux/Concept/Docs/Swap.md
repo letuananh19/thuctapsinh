@@ -52,3 +52,5 @@ vi /etc/fstab
 ## Tài liệu tham khảo:
 
 https://www.sitecuatui.com/swap-la-gi-swap-trong-he-dieu-hanh-linux-ubuntu-centos/
+
+https://opensource.com/article/18/9/swap-space-linux-systems
