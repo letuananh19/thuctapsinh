@@ -14,10 +14,25 @@ Swap được sử dụng để làm RAM ảo cho máy tính và nó có thể s
 - Tổng dung lượng bộ nhớ trong máy tính Linux là **RAM cộng với dung lượng swap** và được gọi là bộ nhớ ảo.
 
 **Các loại Swap**
-- Linux cung cấp hai loại swap space. Theo mặc định, hầu hết 
-
+Linux cung cấp hai loại swap space. 
+- Loại 1: cấu hình thủ công
+  
+Dùng lệnh ``mkswap`` Để thiết lập swap.
 ```
-watch -n 1 free -m
+mkswap tên_swap
+```
+Sau dó ta kích hoạt tệp swap bằng lệnh:
+```
+swapon tên_swap
+```
+Hoặc kích hoạt tất cả các tệp swap cùng lúc ta thêm option ``-a``:
+```
+swapon -a
+```
+  - Loại 2: Cấu hình tự động
+Mỗi khi máy khởi động lại thì file swap sẽ tự biến mất. Do vậy, muốn nó tự động kích hoạt thì ta gán nó vào file ``/etc/fstab``
+```
+vi /etc/fstab
 ```
 
 **Tại sao cần Swap?**
@@ -33,7 +48,6 @@ watch -n 1 free -m
 **Ví dụ về kích thước của Swap**
 
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66414905_859349591075415_7460111335611695104_n.png?_nc_cat=100&_nc_oc=AQmekrN7fEV-VLIiNhvXI5v_KAxulZo1XYF3X7SFii784cONT0frrwUs1qauUmDjW-A&_nc_ht=scontent.fhan5-7.fna&oh=be31546a54531ec2e429a93e2e7c0465&oe=5DAA9680)
-
 
 ## Tài liệu tham khảo:
 
