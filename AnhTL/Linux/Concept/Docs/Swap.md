@@ -42,12 +42,12 @@ vi /etc/fstab
   - **Tránh các trường hợp không lường trước** – Trong một số trường hợp, một chương trình nào đó phát sinh các dữ liệu không xác định, hoặc bất cứ điều gì đó bất thường. Trong trường hợp này, Swap sẽ được sử dụng để hệ thống có thể được duy trì để tiếp tục chạy (mặc dù nó là chậm) thay vì hệ thống đột ngột dừng lại vì thiếu bộ nhớ.
 
 **Nên để kích thước Swap là bao nhiêu?**
-- Nếu ta có bộ nhớ RAM ít hơn hoặc bằng 1Gb, ta nên sử dụng Swap có kích thước tối thiểu là bằng với lượng RAM. Hoặc cũng có thể để kích thước của Swap tối đa là gấp đôi dung lượng RAM tùy thuộc vào dung lượng ổ đĩa ta đang có.
-- Nếu ta không sử dụng **Hibernation** thì kích thước tối thiểu của Swap là “round(sqrt(RAM))” và kích thước tối đa là gấp đôi lượng RAM. Có một nhược điểm khi ta thiết lập kích thước của Swap quá lớn, đó là ta đang lãng phí dung lượng ổ đĩa mặc dù Swap không được sử dụng.
+- Nếu ta có bộ nhớ RAM ít hơn hoặc bằng 2G, ta nên sử dụng Swap có kích thước tối thiểu là bằng với lượng RAM. Hoặc cũng có thể để kích thước của Swap tối đa là gấp đôi dung lượng RAM tùy thuộc vào dung lượng ổ đĩa ta đang có.
+- Có một nhược điểm khi ta thiết lập kích thước của Swap quá lớn, đó là ta đang lãng phí dung lượng ổ đĩa mặc dù Swap không được sử dụng.
 
 **Ví dụ về kích thước của Swap**
 
-![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66414905_859349591075415_7460111335611695104_n.png?_nc_cat=100&_nc_oc=AQmekrN7fEV-VLIiNhvXI5v_KAxulZo1XYF3X7SFii784cONT0frrwUs1qauUmDjW-A&_nc_ht=scontent.fhan5-7.fna&oh=be31546a54531ec2e429a93e2e7c0465&oe=5DAA9680)
+![](https://scontent.fhan3-1.fna.fbcdn.net/v/t1.15752-9/66373088_1127104484144229_5226155289975193600_n.png?_nc_cat=110&_nc_oc=AQnMp_tZUhIHStAh5i4CNbgaTfRlNLhhOi2UKUa3xpOLZXY4AyqZIzWD6JohELIrWng&_nc_ht=scontent.fhan3-1.fna&oh=07e685aef2c927bd5eb6e1bb1b518ac1&oe=5DBAFC78)
 
 ## Tài liệu tham khảo:
 
