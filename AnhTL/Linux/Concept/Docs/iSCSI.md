@@ -22,19 +22,24 @@
 ------------------
 
 #### <a name="1"> 1. Khái niệm </a>
+
 **iSCSI** được xem là một giao thức để truyền tải các SCSI qua mạng IP bằng giao thức TCP/IP. Từ đó iSCSI cho phép truy cập các khối dữ liệu (phân vùng, disk, hoặc thiết bị lưu trữ) trên server qua các lệnh SCSI và truyền tải dữ liệu trên hệ thống mạng(LAN/WAN).
 
 #### <a name="2"> 2. Các thành phần của iSCSI </a>
+
 Một kết nối iSCSI sẽ chia ra làm 2 thành phần chính.
+
 - **iSCSI Initiator**
 - **iSCSI Target**
 
 ![](https://cuongquach.com/resources/images/2018/01/initiator-target-iscsi.png)
 
 **<a name="2.1"> 2.1 iSCSI Initiator </a>**
+
 Là máy client. Nó gửi yêu cầu truy cập đến server để truy cập vào khối dữ liệu và truyền tải các lệnh iSCSI qua đường truyền mạng TCP/IP.
 
 **<<a name="2.2"> 2.2 iSCSI Target </a>**
+
 Đóng vai trò server, nơi lưu trữ dữ liệu. Mỗi máy target phải có một tên duy nhất để các initiator truy cập vào. Một target có một hoặc nhiều hơn 1 khối các thiết bị lưu trữ.
 
 Từ máy chủ **iSCSI Target** này sẽ tiếp nhận các request từ **iSCSI Initiator** gửi đến và trả dữ liệu về 
@@ -42,6 +47,7 @@ Từ máy chủ **iSCSI Target** này sẽ tiếp nhận các request từ **iSC
 Trên **iSCSI Target** sẽ quản lý ổ đĩa iSCSI với các tên gọi **LUN (Logical Unit Number)** được dùng để chia sẻ ổ đĩa lưu trữ iSCSI với phía iSCSI Client.
 
 #### <a name="3"> 3. Một số thuật ngữ trong iSCSI </a>
+
 - **Initiator**: Là máy client. Nó gửi yêu cầu truy cập đến server để truy cập vào khối dữ liệu.
 - **Target**: đóng vai trò server, nơi lưu trữ dữ liệu. Mỗi máy target phải có một tên duy nhất để các initiator truy cập vào. Một target có một hoặc nhiều hơn 1 khối các thiết bị lưu trữ.
 - **ALC (Access Control List)**: danh sách điều khiển truy nhập là một hạn chế truy nhập bằng cách sử dụng nút IQN để xác thực quyền truy nhập cho Client.
