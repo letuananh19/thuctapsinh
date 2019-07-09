@@ -88,7 +88,7 @@ cd backstores/fileio
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/64929825_2323161691278392_508341617506123776_n.png?_nc_cat=104&_nc_oc=AQn0cI4lNaP5a3kjDLtg2AwVKyiCtWc7bDIfij_Gl9epmN2zhovuOrqnH4rm7NX4ZUg&_nc_ht=scontent.fhan5-4.fna&oh=f172708882e71511c0dd524773d8aef5&oe=5DADF388)
 
-Như vậy là ta đã tạo một file(có thể là block) và chỉ định cho nó dùng thiết bị lưu trữ nào (có thể là disk, partition hoặc là logical volume). Cú pháp ``create tên_fileio thiêt_bị`` Ở đây ta để tên fileio là disk01 còn thiết bị gán cho nó là ổ /dev/sdb (mặc định sẽ là toàn bộ G của đĩa)
+Như vậy là ta đã có thể tạo một fileio(có thể là block) và chỉ định cho nó dùng thiết bị lưu trữ nào (có thể là disk, partition hoặc là logical volume). Cú pháp ``create tên_fileio thiêt_bị`` Ở đây ta để tên fileio là disk01 còn thiết bị gán cho nó là ổ /dev/sdb (mặc định sẽ là toàn bộ G của đĩa, hoặc ta có thể chỉ định G cho nó)
 ```
 create disk01 /dev/sdb
 ```
