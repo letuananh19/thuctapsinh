@@ -230,6 +230,15 @@ Ta dùng lệnh ``lsblk`` để kiểm tra xem đã có ổ cứng nào xuất h
 
 `iscsiadm -m node -u -T tên_target -p IP` để đăng xuất khỏi một target mà ta chỉ ra.
 
+# Tài liệu tham khảo:
+
+https://github.com/letuananh19/thuctapsinh/blob/master/NiemDT/Linux/docs/iSCSI.md
+
+https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=1
+
+https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=3
+
+# END
 
 
 
