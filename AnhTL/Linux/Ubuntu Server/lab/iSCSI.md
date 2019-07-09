@@ -66,8 +66,8 @@ create iqn.2019-07.vn.com.nhanhoa:123456
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/66493084_389548975099535_5204312705510408192_n.png?_nc_cat=104&_nc_oc=AQkzw-tdetMKY0vQ0ZM3ZcssVqgpm9WvnrPNNSVbbAHoUl12A4sMON467a0pUXj8j5c&_nc_ht=scontent.fhan5-4.fna&oh=f02607e6fbb61f6499bf327e517d31a7&oe=5DA9A358)
 
--- 1 là: là phần tên máy nó cố định như ta đặt từ trước
--- 2 là: password đăng nhập.
+ (1) là: là phần tên máy nó cố định như ta đặt từ trước.
+ (2) là: password đăng nhập.
 
 `` LUN 0 `` ta vừa tạo bên trên đã được map vào ACL ta vừa tạo.
 
@@ -113,7 +113,7 @@ apt -y install open-iscsi
 ```
 vi /etc/iscsi/initiatorname.iscsi
 ```
--- Thay đổi thành ALC giống như ta đã đặt trên máy chủ iSCSI Target thì mới kết nối được.
+Thay đổi thành ALC giống như ta đã đặt trên máy chủ iSCSI Target thì mới kết nối được.
 ```
 iqn.2019-07.vn.com.nhanhoa:123456
 ```
@@ -121,18 +121,18 @@ iqn.2019-07.vn.com.nhanhoa:123456
 
 - B3: Ta vào file ``/etc/iscsi/iscsid.conf``
 
--- Bỏ note ở dòng 57
+Bỏ note ở dòng 57
 ```
 node.session.auth.authmethod = CHAP
 ```
--- Bỏ note ở dòng 61,62 và chỉ định userid và mật khẩu ta đã đặt trên iSCSI Target.
+Bỏ note ở dòng 61,62 và chỉ định userid và mật khẩu ta đã đặt trên iSCSI Target.
 ```
 node.session.auth.username = tên_user
 node.session.auth.password = mật_khẩu
 ```
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66112128_591207051406214_6676707333726273536_n.png?_nc_cat=100&_nc_oc=AQkMYZ49Peomr7EJ85ds6HdohPmKGsdX_4m7RELHRtEHhcpa09M9G0EwHoYaEPAF7ss&_nc_ht=scontent.fhan5-7.fna&oh=dc2412bd61624666ddacc5ea6cf6b880&oe=5DB16689)
 
--- Sau đó ta restart iscsi
+Sau đó ta restart iscsi
 ```
 systemctl restart iscsid open-iscsi
 ```
@@ -143,19 +143,19 @@ systemctl restart iscsid open-iscsi
 ```
 iscsiadm -m discovery -t sendtargets -p 192.168.230.142
 ```
--- Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node --login`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsisdm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
+Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node --login`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsisdm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
 
 ![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/66126767_433842577207592_5849087992148262912_n.png?_nc_cat=108&_nc_oc=AQkAY1f2RwEkomihP0vaxQ4haGEo3tq8xwGudvk92Hl7w2VKV5gIh2nJC5QHeAqG0i8&_nc_ht=scontent.fhan5-5.fna&oh=32cca499785a2849dbaa3f80203da103&oe=5DAEADCB)
 
--- Ta có thể hiển thị phiên kết nối bằng lệnh:
+Ta có thể hiển thị phiên kết nối bằng lệnh:
 ```
 iscsiadm -m session -o show
 ```
--- Hiển thị thông tin node bằng lệnh:
+Hiển thị thông tin node bằng lệnh:
 ```
 iscsiadm -m node -o show
 ```
--- Dùng lệnh lsblk hiển thị thông tin ổ cứng.
+Dùng lệnh lsblk hiển thị thông tin ổ cứng.
 ```
 lsblk
 ```
@@ -188,11 +188,11 @@ vi /etc/iscsi/initiatorname.iscsi
 ```
 vi /etc/iscsi/iscsid.conf
 ```
--- Bỏ note ở dòng 57
+ Bỏ note ở dòng 57
 ```
 node.session.auth.authmethod = CHAP
 ```
--- Bỏ note ở dòng 61,62 và chỉ định userid và mật khẩu ta đã đặt trên iSCSI Target.
+ Bỏ note ở dòng 61,62 và chỉ định userid và mật khẩu ta đã đặt trên iSCSI Target.
 ```
 node.session.auth.username = tên_user
 node.session.auth.password = mật_khẩu
@@ -201,7 +201,7 @@ node.session.auth.password = mật_khẩu
 - B4: Sử dụng tiện ích `iscsiadm` để tìm kiếm, đăng nhập, đăng xuất các targets iSCSI.
 Để có được danh sách các target trên server ta thực hiện lệnh sau:
 ```
-`iscsiadm -m discovery -t st -p IP_server`
+iscsiadm -m discovery -t st -p IP_server
 ```
 Trong ví dụ này server có địa chỉ IP: 192.168.230.142
 
