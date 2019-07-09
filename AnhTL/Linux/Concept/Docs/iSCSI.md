@@ -2,27 +2,49 @@
 
 ![](https://community.fs.com/blog/wp-content/uploads/2018/08/how-iSCSI-storage-works.jpg)
 
-#### 1. Khái niệm
+### Mục lục
+[1. Khái niệm](#1)
+
+[2. Các thành phần của iSCSI](#2)
+
+- [2.1 iSCSI Initiator](#2.1)
+- [2.2 iSCSI Target](#2.2)
+
+[3. Một số thuật ngữ trong iSCSI](#3)
+
+[4. iSCSI hoạt động như thế nào?](#4)
+
+[5. Một số loại bộ nhớ sao lưu (Backstore)](#5)
+
+[6. Cài đặt](#6)
+
+- [6.1: Server](#sv)
+- [6.2: Client](#cl)
+
+[Tài liệu tham khảo](#tltk)
+------------------
+
+#### <a name="1"> 1. Khái niệm </a>
 **iSCSI** được xem là một giao thức để truyền tải các SCSI qua mạng IP bằng giao thức TCP/IP. Từ đó iSCSI cho phép truy cập các khối dữ liệu (phân vùng, disk, hoặc thiết bị lưu trữ) trên server qua các lệnh SCSI và truyền tải dữ liệu trên hệ thống mạng(LAN/WAN).
 
-#### 2. Các thành phần của iSCSI
+#### <a name="2"> 2. Các thành phần của iSCSI </a>
 Một kết nối iSCSI sẽ chia ra làm 2 thành phần chính.
 - **iSCSI Initiator**
 - **iSCSI Target**
 
 ![](https://cuongquach.com/resources/images/2018/01/initiator-target-iscsi.png)
 
-**2.1 iSCSI Initiator**
+**<a name="2.1"> 2.1 iSCSI Initiator </a>**
 Là máy client. Nó gửi yêu cầu truy cập đến server để truy cập vào khối dữ liệu và truyền tải các lệnh iSCSI qua đường truyền mạng TCP/IP.
 
-**2.2 iSCSI Target**
+**<<a name="2.2"> 2.2 iSCSI Target </a>**
 Đóng vai trò server, nơi lưu trữ dữ liệu. Mỗi máy target phải có một tên duy nhất để các initiator truy cập vào. Một target có một hoặc nhiều hơn 1 khối các thiết bị lưu trữ.
 
 Từ máy chủ **iSCSI Target** này sẽ tiếp nhận các request từ **iSCSI Initiator** gửi đến và trả dữ liệu về 
 
 Trên **iSCSI Target** sẽ quản lý ổ đĩa iSCSI với các tên gọi **LUN (Logical Unit Number)** được dùng để chia sẻ ổ đĩa lưu trữ iSCSI với phía iSCSI Client.
 
-#### 3. Một số thuật ngữ trong iSCSI
+#### <a name="3"> 3. Một số thuật ngữ trong iSCSI </a>
 - **Initiator**: Là máy client. Nó gửi yêu cầu truy cập đến server để truy cập vào khối dữ liệu.
 - **Target**: đóng vai trò server, nơi lưu trữ dữ liệu. Mỗi máy target phải có một tên duy nhất để các initiator truy cập vào. Một target có một hoặc nhiều hơn 1 khối các thiết bị lưu trữ.
 - **ALC (Access Control List)**: danh sách điều khiển truy nhập là một hạn chế truy nhập bằng cách sử dụng nút IQN để xác thực quyền truy nhập cho Client.
@@ -37,7 +59,7 @@ Trên **iSCSI Target** sẽ quản lý ổ đĩa iSCSI với các tên gọi **L
 - **node**: Là một iSCSI initiator hoặc iSCSI target được xác định bởi IQN của nó.
 - **portal**: Là địa chỉ IP và port trên target và initiator để thiết lập kết nối.
 
-#### 4. iSCSI hoạt động như thế nào?
+#### <a name="4"> 4. iSCSI hoạt động như thế nào? </a>
 
 ![](https://cuongquach.com/resources/images/2018/01/iscsi-communication-1.png)
 
@@ -57,18 +79,18 @@ Trên **iSCSI Target** sẽ quản lý ổ đĩa iSCSI với các tên gọi **L
 
 ![](https://1.bp.blogspot.com/-QKBDz65Ec-U/WyxkubhLEVI/AAAAAAAAM1Q/2X4D6eupBlMMx8BdOu35zBh71LN9dyLVACLcBGAs/s320/iscsi-session.png)
 
-#### 5. Một số loại bộ nhớ sao lưu (Backstore)
+#### <a name="5"> 5. Một số loại bộ nhớ sao lưu (Backstore) </a>
 - **Block** một khối thiết bị lưu trữ được xác định trên server. Nó có thể là disk, partition, logical volume, hoặc bất kỳ files thiết bị nào được chỉ ra trên server.
 - **fileio** nó tạo ra một file có kích thước được xác định trong hệ thống file của server.
 
-#### 6. Cài đặt 
+#### <a name="6"> 6. Cài đặt </a>
 Ta có mô hình:
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/66328641_462798444497366_4647123570248384512_n.png?_nc_cat=110&_nc_oc=AQlX_p3yo4uTgm7QO3gypk8Pe56g3Za2SlqerilwX81jv9x9ptC32-fh0ZEhtWf9Pyc&_nc_ht=scontent.fhan5-2.fna&oh=11a2052e1aed61842652834b36e7d9f8&oe=5DA50D99)
 - Chuẩn bị
   - Ít nhất 2 máy, 1 máy làm server store, 1 máy làm client
   - Trên máy server add thêm một vài ổ cứng.
 
-**6.1: Trên server (Target)**
+**<a name="sv"> 6.1: Trên server (Target) </a>**
 - B1: Ta cài đặt Target
 ```
 apt -y install targetcli-fb
@@ -79,16 +101,16 @@ targetcli
 ```
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66134188_353181535360365_412282200029921280_n.png?_nc_cat=103&_nc_oc=AQmNxJKdOVjDkq8CyN0w3MJWMokJhMH-rc-kChTCY8bA4c9ckPVi6Mma3JQvxoUObBM&_nc_ht=scontent.fhan5-7.fna&oh=a5a25eb0c6091a9aca803e3f8c931431&oe=5DBF4D70)
 
-- B3: Ta tiến hành cd vào thư mục bên ``backstores/block`` hoặc ``backsstores/fileio`` tùy theo ta muốn tạo backstores theo kiểu nào.
+- B3: Ta tiến hành cd vào thư mục ``backstores/block`` hoặc ``backstores/fileio`` tùy theo ta muốn tạo backstores theo kiểu nào.
 ```
 cd backstores/block
 ```
 ```
-backstores/fileio
+cd backstores/fileio
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/64929825_2323161691278392_508341617506123776_n.png?_nc_cat=104&_nc_oc=AQn0cI4lNaP5a3kjDLtg2AwVKyiCtWc7bDIfij_Gl9epmN2zhovuOrqnH4rm7NX4ZUg&_nc_ht=scontent.fhan5-4.fna&oh=f172708882e71511c0dd524773d8aef5&oe=5DADF388)
 
-Như vậy là ta đã tạo một file(có thể là block) và chỉ định cho nó dùng thiết bị lưu trữ nào (có thể là disk, partition hoặc là logical volume). Cú pháp ``create tên_block thiêt_bị`` Ở đây ta để tên fileio là disk01 còn thiết bị gán cho nó là ổ /dev/sdb (mặc định sẽ là toàn bộ G của đĩa)
+Như vậy là ta đã có thể tạo một fileio(có thể là block) và chỉ định cho nó dùng thiết bị lưu trữ nào (có thể là disk, partition hoặc là logical volume). Cú pháp ``create tên_fileio thiêt_bị`` Ở đây ta để tên fileio là disk01 còn thiết bị gán cho nó là ổ /dev/sdb (mặc định sẽ là toàn bộ G của đĩa, hoặc ta có thể chỉ định G cho nó)
 ```
 create disk01 /dev/sdb
 ```
@@ -157,7 +179,7 @@ ufw allow 3260
 ```
 ![](https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/66105913_1115832385269281_1302387749487116288_n.png?_nc_cat=111&_nc_oc=AQkZj_yrvpGZhluB-RVEeN2MV-RUCnvG-uHnGvdt_FBb1aI1xKLcS1Nr6RR0oPDNn9U&_nc_ht=scontent.fhan5-3.fna&oh=36b4a026e5df2643cc48e60b6a31c5a7&oe=5D7C855B)
 
-**6.2: Trên client (Initiator)**
+**<a name="cl"> 6.2: Trên client (Initiator) </a>**
 - B1: Cài iSCSI
 ```
 apt -y install open-iscsi
@@ -197,4 +219,39 @@ systemctl restart iscsid open-iscsi
 ```
 iscsiadm -m discovery -t sendtargets -p 192.168.230.142
 ```
--- Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node -l`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsisdm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
+-- Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node --login`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsisdm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
+
+![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/66126767_433842577207592_5849087992148262912_n.png?_nc_cat=108&_nc_oc=AQkAY1f2RwEkomihP0vaxQ4haGEo3tq8xwGudvk92Hl7w2VKV5gIh2nJC5QHeAqG0i8&_nc_ht=scontent.fhan5-5.fna&oh=32cca499785a2849dbaa3f80203da103&oe=5DAEADCB)
+
+-- Ta có thể hiển thị phiên kết nối bằng lệnh:
+```
+iscsiadm -m session -o show
+```
+-- Hiển thị thông tin node bằng lệnh:
+```
+iscsiadm -m node -o show
+```
+-- Dùng lệnh lsblk hiển thị thông tin ổ cứng.
+```
+lsblk
+```
+
+- B5: Để sử dụng nó ta tiến hành phân vùng format và mount nó vaò thư mục và sử dụng bình thường như khi ta gán trực tiếp vào máy của ta.
+```
+mkfs -t ext4 /dev/sdb1
+```
+```
+mount /dev/sdb1 /trap
+```
+![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/66135599_1077220865999197_5804684219355496448_n.png?_nc_cat=102&_nc_oc=AQkCCj_Nxw7bWvm1DTIncyrJfRC5ShxIaL-mv6tz21TizSnmuDLpXrW7ncVZYuu6rYo&_nc_ht=scontent.fhan5-2.fna&oh=3376e4c3fcc46ca1640adab95b9a796a&oe=5DB0D8B5)
+
+## <a name="tltk"> Tài liệu tham khảo: </a>
+
+https://github.com/letuananh19/thuctapsinh/blob/master/NiemDT/Linux/docs/iSCSI.md
+
+http://svuit.vn/threads/ly-thuyet-he-thong-luu-tru-iscsi-san-938/
+
+https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=1
+
+https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=3
+
