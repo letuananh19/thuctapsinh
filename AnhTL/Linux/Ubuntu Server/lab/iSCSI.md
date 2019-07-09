@@ -11,8 +11,6 @@
 #### <a name="1"> 1. Cài đặt </a>
 Ta có mô hình:
 ![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/66460810_2314449822206897_4691436689166434304_n.png?_nc_cat=101&_nc_oc=AQlxBlZ_NeFbtboJ_S_VmrhBhiuCsN3QWPjIDUzua-RvZGAvwgTKXpm5DijDOPy4TsE&_nc_ht=scontent.fhan5-5.fna&oh=0e873eb591670f17b12d14f134ff6ee7&oe=5DBF7C21)
-- Chuẩn bị
-  - Trên máy server add thêm một vài ổ cứng.
 
 **<a name="1.1"> 1.1: Trên server (Target) </a>**
 - B1: Ta cài đặt Target
