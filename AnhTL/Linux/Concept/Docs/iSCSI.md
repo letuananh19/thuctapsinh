@@ -79,12 +79,12 @@ targetcli
 ```
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66134188_353181535360365_412282200029921280_n.png?_nc_cat=103&_nc_oc=AQmNxJKdOVjDkq8CyN0w3MJWMokJhMH-rc-kChTCY8bA4c9ckPVi6Mma3JQvxoUObBM&_nc_ht=scontent.fhan5-7.fna&oh=a5a25eb0c6091a9aca803e3f8c931431&oe=5DBF4D70)
 
-- B3: Ta tiến hành cd vào thư mục bên ``backstores/block`` hoặc ``backstores/fileio`` tùy theo ta muốn tạo backstores theo kiểu nào.
+- B3: Ta tiến hành cd vào thư mục ``backstores/block`` hoặc ``backstores/fileio`` tùy theo ta muốn tạo backstores theo kiểu nào.
 ```
 cd backstores/block
 ```
 ```
-backstores/fileio
+cd backstores/fileio
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/64929825_2323161691278392_508341617506123776_n.png?_nc_cat=104&_nc_oc=AQn0cI4lNaP5a3kjDLtg2AwVKyiCtWc7bDIfij_Gl9epmN2zhovuOrqnH4rm7NX4ZUg&_nc_ht=scontent.fhan5-4.fna&oh=f172708882e71511c0dd524773d8aef5&oe=5DADF388)
 
