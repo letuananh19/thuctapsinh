@@ -57,7 +57,7 @@ create /backstores/fileio/disk01
 ```
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66934744_504847776921084_7784329582039007232_n.png?_nc_cat=100&_nc_oc=AQkN0v2wom7cl03mEZPuxqKejngzLPp1FjTMG0HzaBZGnHDkGyYs-wEBJj0MEEjtjJ4&_nc_ht=scontent.fhan5-7.fna&oh=f4a4e7cb6bf1cbee9be394240db050b0&oe=5DA633D7)
 
-- B6: Tạo ACL để khi client trình bày đúng cái tên này thì nó mới được target chấp nhận kết nối. 
+- B6: Tạo ACL để khi client nhập đúng cái tên này thì nó mới được target chấp nhận kết nối. 
 ```
 cd ../acls
 ```
