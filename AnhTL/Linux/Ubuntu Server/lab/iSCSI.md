@@ -10,7 +10,7 @@
 
 #### <a name="1"> 1. Cài đặt </a>
 Ta có mô hình:
-![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/66460810_2314449822206897_4691436689166434304_n.png?_nc_cat=101&_nc_oc=AQlxBlZ_NeFbtboJ_S_VmrhBhiuCsN3QWPjIDUzua-RvZGAvwgTKXpm5DijDOPy4TsE&_nc_ht=scontent.fhan5-5.fna&oh=0e873eb591670f17b12d14f134ff6ee7&oe=5DBF7C21)
+![](https://scontent.fhan3-3.fna.fbcdn.net/v/t1.15752-9/66447567_2650723214938726_7958818834666749952_n.png?_nc_cat=100&_nc_oc=AQmBPFbkPnba2VJtH7pUPli6Ao7teWn42X86wBqLJ_KLUdars0fIt_JA6oCKpIABjTU&_nc_ht=scontent.fhan3-3.fna&oh=78896dbad8243251faf90ae9f4ee6b7f&oe=5DA4DA27)
 
 **<a name="1.1"> 1.1: Trên server (Target) </a>**
 - B1: Ta cài đặt Target
