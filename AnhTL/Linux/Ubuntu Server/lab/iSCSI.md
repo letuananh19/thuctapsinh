@@ -9,7 +9,9 @@
 - [1.3: Trên Client (centOS)](#1.3)
 
 #### <a name="1"> 1. Cài đặt </a>
+
 Ta có mô hình:
+
 ![](https://scontent.fhan3-3.fna.fbcdn.net/v/t1.15752-9/66447567_2650723214938726_7958818834666749952_n.png?_nc_cat=100&_nc_oc=AQmBPFbkPnba2VJtH7pUPli6Ao7teWn42X86wBqLJ_KLUdars0fIt_JA6oCKpIABjTU&_nc_ht=scontent.fhan3-3.fna&oh=78896dbad8243251faf90ae9f4ee6b7f&oe=5DA4DA27)
 
 **<a name="1.1"> 1.1: Trên server (Target) </a>**
