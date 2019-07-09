@@ -58,7 +58,7 @@ Trên **iSCSI Target** sẽ quản lý ổ đĩa iSCSI với các tên gọi **L
 
 #### <a name="4"> 4. iSCSI hoạt động như thế nào? </a>
 
-![](https://cuongquach.com/resources/images/2018/01/iscsi-communication-1.png)
+![](http://i1.wp.com/opentodo.files.wordpress.com/2012/10/2iscsiprotocol.jpg)
 
 - **iSCSI Initiator** sẽ khởi tạo request yêu cấu truy xuất dữ liệu đến hệ thống lưu trữ store ở máy chủ **iSCSI Target**.
 - Lúc này Initiator sẽ tạo ra 1 số lệnh **SCSI** tương ứng với yêu cầu của client.
