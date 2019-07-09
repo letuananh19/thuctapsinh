@@ -14,7 +14,7 @@ Ta có mô hình:
 - Chuẩn bị
   - Trên máy server add thêm một vài ổ cứng.
 
-**<a name="sv"> 1.1: Trên server (Target) </a>**
+**<a name="1.1"> 1.1: Trên server (Target) </a>**
 - B1: Ta cài đặt Target
 ```
 apt -y install targetcli-fb
@@ -103,7 +103,7 @@ ufw allow 3260
 ```
 ![](https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/66105913_1115832385269281_1302387749487116288_n.png?_nc_cat=111&_nc_oc=AQkZj_yrvpGZhluB-RVEeN2MV-RUCnvG-uHnGvdt_FBb1aI1xKLcS1Nr6RR0oPDNn9U&_nc_ht=scontent.fhan5-3.fna&oh=36b4a026e5df2643cc48e60b6a31c5a7&oe=5D7C855B)
 
-**<a name="cl"> 1.2: Trên client (ubuntu) (Initiator) </a>**
+**<a name="1.2"> 1.2: Trên client (ubuntu) (Initiator) </a>**
 - B1: Cài iSCSI
 ```
 apt -y install open-iscsi
@@ -169,7 +169,7 @@ mount /dev/sdb1 /trap
 ```
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/66135599_1077220865999197_5804684219355496448_n.png?_nc_cat=102&_nc_oc=AQkCCj_Nxw7bWvm1DTIncyrJfRC5ShxIaL-mv6tz21TizSnmuDLpXrW7ncVZYuu6rYo&_nc_ht=scontent.fhan5-2.fna&oh=3376e4c3fcc46ca1640adab95b9a796a&oe=5DB0D8B5)
 
-**<a name="cl1"> 1.3: Trên client (centOS) (Initiator) </a>**
+**<a name="1.3"> 1.3: Trên client (centOS) (Initiator) </a>**
 - B1: Cài iscsi
 ```
 yum install iscsi-initiator-utils
