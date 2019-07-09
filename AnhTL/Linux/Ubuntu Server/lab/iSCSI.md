@@ -238,7 +238,11 @@ https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=1
 
 https://www.server-world.info/en/note?os=Ubuntu_18.04&p=iscsi&f=3
 
+http://software.fujitsu.com/jp/manual/manualfiles/m160004/j2ul2107/02enz200/j2107-00-09-06-03.html
+
 # END
+
+
 
 
 
