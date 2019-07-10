@@ -81,7 +81,7 @@ Mô hình các thành phần trong LVM
 
 #### <a name="2"> 2. Setup LVM </a>
 
-
+https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Ubuntu%20Server/lab/LVM.md
 
 # END!
 
