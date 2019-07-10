@@ -76,7 +76,7 @@ or
 pvdisplay
 ```
 
-![](https://i.imgur.com/ku9mWBD.png)
+![](https://i.imgur.com/GanKEPl.png)
 
 **B4: Tạo Volume Group**
 
@@ -94,7 +94,7 @@ or
 ```
 vgdisplay
 ```
-![](https://i.imgur.com/91LQZHu.png)
+![](https://i.imgur.com/jA5T4T6.png)
 
 **B5: Tạo Logical Volume**
 
