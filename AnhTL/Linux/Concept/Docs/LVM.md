@@ -83,7 +83,7 @@
 - Sắp xếp dữ liệu trên đĩa cứng máy tính.
 - Quản lý vị trí vật lý của mọi thành phần dữ liệu.
 
-#### <a name="2"> 2 Setup LVM </a>
+#### <a name="2"> 2. Setup LVM </a>
   
 - Ta sẽ thực hành trên ubuntu server 18.04
 - Trên máy Ubuntu này đã thêm 3 ổ cứng - mỗi ổ 20G
