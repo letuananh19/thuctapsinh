@@ -33,7 +33,8 @@
 
 **<a name="1.3"> 1.3 Các thành phần trong LVM </a>**
 
-- Mô hình các thành phần trong LVM
+Mô hình các thành phần trong LVM
+
 ![](http://www.brainupdaters.net/wp-content/uploads/2017/01/LogicalVolumenManager.jpg)
 
 **Hard drives – Drives**
