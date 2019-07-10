@@ -25,7 +25,7 @@
 #### <a name="1"> 1. Khái niệm </a>
 
 - **iSCSI** được xem là một giao thức để truyền tải các SCSI qua mạng IP bằng giao thức TCP/IP. Từ đó iSCSI cho phép truy cập các khối dữ liệu (phân vùng, disk, hoặc thiết bị lưu trữ) trên server qua các lệnh SCSI và truyền tải dữ liệu trên hệ thống mạng(LAN/WAN).
-
+- **iSCSI** sử dụng cổng TCP 3260.
 #### <a name="2"> 2. Các thành phần của iSCSI </a>
 
 Một kết nối iSCSI sẽ chia ra làm 2 thành phần chính.
