@@ -303,4 +303,4 @@ pvremove /dev/sdb2
 
 https://bachkhoa-aptech.edu.vn/gioi-thieu-ve-logical-volume-manager.html
 
-https://github.com/duckmak14/linux/blob/master/finish/LVM.md
+https://github.com/duckmak14/linux/blob/master/finish/LVM.md 
