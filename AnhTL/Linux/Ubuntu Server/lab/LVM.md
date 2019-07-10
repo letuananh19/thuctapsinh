@@ -11,12 +11,13 @@
 
 -------------------
 
-#### <a name="1"> 1. Setup LVM </a>
-
 **Lưu ý: Với centOS ta phải yum install lvm**
 ```
 yum install lvm2
 ```
+
+#### <a name="1"> 1. Setup LVM </a>
+
   
 Ta có mô hình:
 
