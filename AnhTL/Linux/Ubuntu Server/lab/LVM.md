@@ -166,7 +166,7 @@ lvs
 
 Ở đây, ta đã tạo được Logical Volume  có tên là ``lv1``, và giả sử Logical Volume này dung lượng đã đầy và ta cần tăng kích thước của nó để tiếp tục sử dụng..
 
-Logical Volume này thuộc Volume Group có tên vg1, để tăng kích thước, bước đầu tiên phải kiểm tra xem Volume Group còn dư dung lượng để kéo giãn Logical Volume không. Logical Volume thuộc 1 Volume Group nhất định, Volume Group đã cấp phát hết thì Logical Volume cũng không thể tăng dung lượng được. Để kiểm tra, ta dùng lệnh:
+Logical Volume này thuộc Volume Group có tên vg1, để tăng kích thước, bước đầu tiên phải kiểm tra xem Volume Group còn dư dung lượng để mở rộng Logical Volume không. Logical Volume thuộc 1 Volume Group nhất định, Volume Group đã cấp phát hết thì Logical Volume cũng không thể tăng dung lượng được. Để kiểm tra, ta dùng lệnh:
 ```
 vgs
 ```
@@ -194,7 +194,7 @@ lvs
 So sánh trước và sau khi tăng lên ta có thể xem hình dưới đây:
 ![](https://i.imgur.com/E3TncDQ.png)
 
-Sau khi tăng kích thước cho Logical Volume thì Logical Volume đã được tăng nhưng file system trên volume này vẫn chưa thay đổi, bạn phải sử dụng lệnh sau để thay đổi:
+Sau khi tăng kích thước cho Logical Volume thì Logical Volume đã được tăng nhưng file system trên volume này vẫn chưa thay đổi, ta phải sử dụng lệnh sau để thay đổi:
 ```
 resize2fs /dev/vg1/lv1
 ```
@@ -230,7 +230,7 @@ mount /dev/vg1/lv1 lvm
 
 #### <a name="3"> 3. Thay đổi dung lượng Volume Group trên LVM </a>
 
-Ở phần ta tăng kích thước của Logical Volume nhưng với điều kiện Volume Group của Logical Volume đó còn dung lượng. 
+Ở phần trước ta tăng kích thước của Logical Volume nhưng với điều kiện Volume Group của Logical Volume đó còn dung lượng. 
 
 Phần này chúng ta sẽ tìm hiểu xem làm thế nào có thể mở rộng thêm kích thước của Volume Group cũng như thu hồi dung lượng của nó.
 
