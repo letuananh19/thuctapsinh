@@ -117,7 +117,7 @@ or
 ```
 lvdisplay
 ```
-![](https://i.imgur.com/EuQpPCt.png)
+![](https://i.imgur.com/NgjSlCe.png)
 
 **B6: Định dạng Logical Volume**
 
