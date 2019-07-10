@@ -34,7 +34,7 @@ Từ các Hard Drives trên hệ thống, ta tạo các partition. Ở đây, t�
 fdisk /dev/sdb
 ```
 
-![](https://i.imgur.com/YfsAr3s.png)
+![](https://i.imgur.com/OqmF2Cy.png)
 
 - Trong đó:
   - Nhấn ``n`` để bắt đầu tạo partition.
@@ -46,7 +46,7 @@ fdisk /dev/sdb
 
 Tiếp theo ta thay đổi định dạng của partition vừa mới tạo thành LVM.
 
-![](https://i.imgur.com/ynFznGU.png)
+![](https://i.imgur.com/6vJ8cFe.png)
 
 - Trong đó:
 - Bấm ``t`` để thay đổi định dạng partition.
@@ -55,7 +55,7 @@ Tiếp theo ta thay đổi định dạng của partition vừa mới tạo thà
 
 Tương tự như vậy ta tạo thêm các partition primary của sdb và sdc
 
-![](https://i.imgur.com/zZfz6Xa.png)
+![](https://i.imgur.com/Q8bXIo3.png)
 
 **B3: Tạo Physical Volume**
 
