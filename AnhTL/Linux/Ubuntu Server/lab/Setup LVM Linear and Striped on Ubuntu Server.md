@@ -12,7 +12,9 @@ lvcreate --extents N%FREE --name tên_logical tên_group
 Trong đó:
 
 ``N``: là % dung lượng ta định lấy ra trong số dung lượng Volume group còn trống.
+
 ``tên_logical`` là tên của logical volume ta định tạo
+
 ``tên_group`` là tên của group volume.
 
 Để kiểm tra ta dùng lệnh:
