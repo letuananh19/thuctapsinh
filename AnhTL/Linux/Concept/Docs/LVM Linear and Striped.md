@@ -7,6 +7,7 @@
 [2. Phân biệt Linear và Striped](#2)
 
 [3. Cài đặt](#3)
+
 ------------------
 
 #### <a name="1"> 1. Khái niệm <a/>
@@ -26,7 +27,7 @@
 
 #### <a name="3"> 3. Cài đặt </a>
 
-
+https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Ubuntu%20Server/lab/Setup%20LVM%20Linear%20and%20Striped%20on%20Ubuntu%20Server.md
 
 # END
 
