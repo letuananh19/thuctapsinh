@@ -53,3 +53,5 @@
 [27. iSCSI](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/iSCSI.md)
 
 [28. LVM](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/LVM.md)
+
+[29. LVM linear and striped](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/LVM%20Linear%20and%20Striped.md)
