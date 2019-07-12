@@ -88,8 +88,11 @@ B1: Ta tạo striped logical volume trước tiên ta cũng phải có volume gr
 lvcreate --extents N%FREE --stripes X --stripesize Y --name tên_logical tên_group
 ```
 Trong đó: 
+
 ``N`` là % dung lượng ta định lấy ra trong số dung lượng Volume group còn trống.
+
 ``X`` là số physical volume ta định lấy
+
 ``Y`` là dung lượng 1 lần nó ghi trên 1 physical volume(giống vd bên trên)
 
 ![](https://i.imgur.com/O4aiBeK.png)
