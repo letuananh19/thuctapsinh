@@ -143,7 +143,7 @@ systemctl restart iscsid open-iscsi
 ```
 iscsiadm -m discovery -t sendtargets -p 192.168.230.142
 ```
-Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node --login`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsisdm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
+Để đăng nhập ta dùng lệnh. Ta có 2 cách để đăng nhập: `` iscsiadm -m node --login`` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên. hoặc ``iscsiadm -m node -T tên_target -p IP`` để đăng nhập vào target của IP ta chỉ định.
 
 ![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/66126767_433842577207592_5849087992148262912_n.png?_nc_cat=108&_nc_oc=AQkAY1f2RwEkomihP0vaxQ4haGEo3tq8xwGudvk92Hl7w2VKV5gIh2nJC5QHeAqG0i8&_nc_ht=scontent.fhan5-5.fna&oh=32cca499785a2849dbaa3f80203da103&oe=5DAEADCB)
 
