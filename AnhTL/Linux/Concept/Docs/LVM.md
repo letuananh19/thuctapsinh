@@ -12,13 +12,18 @@
 
 [2. Setup LVM](#2)
 
-
 ------------
 
 #### <a name="1"> 1. Khái niệm </a>
 **<a name="1.1"> 1.1 LVM là gì </a>**
 - Logical Volume Manager (LVM): là phương pháp cho phép ấn định không gian đĩa cứng thành những logical Volume khiến cho việc thay đổi kích thước trở nên dễ dàng hơn (so với partition). Với kỹ thuật Logical Volume Manager (LVM) ta có thể thay đổi kích thước mà không cần phải sửa lại table của OS.
 
+- LVM có 2 phiên bản:
+
+  - LVM 1 - Phiên bản nằm trong kernel 2.4 series,
+
+  - LVM 2 - Phiên bản mới nhất và lớn nhất của LVM cho Linux.
+  
 **<a name="1.2"> 1.2 Vai trò của LVM </a>**
 - LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng
 
