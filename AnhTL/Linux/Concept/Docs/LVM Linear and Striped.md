@@ -17,7 +17,7 @@
 #### <a name="2"> 2. Phân biệt Linear và Striped </a>
 - **Linear** là cách ghi mặc định, ghi lần lượt lên từng Physical Volume. Khi dữ liệu được ghi đầy lên Physical Volume nó mới thực hiện ghi dữ liệu lên Physical Volume khác.
 
-  - Ví dụ: Ta có một Logical Volume tên là ``LV1`` được hình thành từ 2 Physical Volume là ``/dev/sdb`` và ``/dev/sdc``. Khi ta thực hiện ghi dữ liệu theo cách thông thường vào LV1 thì dữ liệu sẽ được ghi đầy vào /dev/sdb trước sau đó thì mới ghi vào /dev/sdc.
+  - Ví dụ: Ta có một Logical Volume tên là ``LV1`` được hình thành từ 2 Physical Volume là ``/dev/sdb`` và ``/dev/sdc``. Khi ta thực hiện ghi dữ liệu theo cách thông thường vào LV1 thì dữ liệu sẽ được ghi đầy vào ``/dev/sdb`` trước sau đó thì mới ghi vào ``/dev/sdc``.
 
 - **Striped** nó dùng để thay thế cho **Linear**.
 
