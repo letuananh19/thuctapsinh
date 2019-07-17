@@ -30,7 +30,7 @@ Trong đó: “if” đại diện cho input file, và “of” đại diện ch
 **2.2: option**
 
 - ``bs=Bytes``: quá trình đọc và ghi bao nhiêu byte một lần đọc
-  - ``bs - block size: có đơn vị là byte
+  - ``bs - block size``: có đơn vị là byte
 - ``cbs=bytes``: Chuyển đổi bao nhiêu byte một lần
 - ``count=blocks``: thực hiện bao nhiêu block trong quá trình thực thi câu lệnh
 - ``if`` chỉ đường dẫ n đọc đầu vào
