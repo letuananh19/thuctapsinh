@@ -12,11 +12,9 @@
 
 ###  <a name="1"> 1. khái niệm </a>
 
-**dd** là một tiện ích dòng lệnh cho các hệ điều hành giống Unix và giống như Unix với mục đích chính là chuyển đổi và sao chép dữ liệu các tệp.
+**dd** là một tiện ích dòng lệnh cho các hệ điều hành giống Unix với mục đích chính là chuyển đổi và sao chép dữ liệu các tệp với nhau.
 
-Trên Linux các ổ đĩa cứng và các thiết bị đặc biệt như ``(/dev/sda và dev/sdb)`` xuất hiện trong hệ thống tệp giống như các tệp thông thường.
-
-**dd** có thể đọc và ghi dữ liệu từ vào các tệp này,
+Trên Linux các ổ đĩa cứng và các thiết bị đặc biệt như ``(/dev/sda và dev/sdb)`` xuất hiện trong hệ thống tệp giống như các tệp thông thường. **dd** có thể đọc và ghi dữ liệu từ vào các tệp này,
 
 Theo mặc định, **dd** đọc từ stdin và ghi vào thiết bị xuất chuẩn, nhưng chúng có thể được thay đổi bằng cách sử dụng các tùy chọn if (tệp đầu vào) và of (tệp đầu ra).
 - stdin viết tắt của ``standard input`` , stdin là một luồng đầu vào nơi dữ liệu được gửi đến và đọc bởi một chương trình.
