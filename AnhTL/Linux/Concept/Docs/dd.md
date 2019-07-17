@@ -18,7 +18,7 @@ Trên Linux các ổ đĩa cứng và các thiết bị đặc biệt như ``(/d
 
 **dd** có thể đọc và ghi dữ liệu từ vào các tệp này,
 
-Theo mặc định, **dd** đọc từ stdin và ghi vào thiết bị xuất chuẩn, nhưng chúng có thể được thay đổi bằng cách sử dụng các tùy chọn if (tệp đầu vào) và của (tệp đầu ra).
+Theo mặc định, **dd** đọc từ stdin và ghi vào thiết bị xuất chuẩn, nhưng chúng có thể được thay đổi bằng cách sử dụng các tùy chọn if (tệp đầu vào) và of (tệp đầu ra).
 - stdin viết tắt của ``standard input`` , stdin là một luồng đầu vào nơi dữ liệu được gửi đến và đọc bởi một chương trình.
 
 ### <a name="2"> 2. Cấu trúc và một số options </a> 
