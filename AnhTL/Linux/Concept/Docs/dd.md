@@ -114,22 +114,7 @@ dd if=/dev/sdb1 of=/dev/sdc1 bs=512 conv=noerror,sync
 
 Trong đó: bs=512 có nghĩa là mỗi lần đọc ghi thì nó sẽ đọc 512 byte
 
-**3.6: Sao lưu phục hồi MBR**
-Việc sao lưu lại MBR là việc làm cần thiết đối với hệ điều hành linux. nó đề phòng cho việc virut có thể vào được vùng MBR.
-
-- Sao lưu MBR:
-
-```
- bs=512 count=1
-```
-
-- Phục hồi MBR:
-
-```
-dd if=/mbr.txt of=/dev/sdb1
-```
-
-**3.7: Chuyển đổi chữ thường thành chữ in hoa**
+**3.6: Chuyển đổi chữ thường thành chữ in hoa**
 
 - Chuyển đổi toàn bộ dữ liệu từ chữ thường thành chữ in hoa
 
@@ -147,7 +132,7 @@ dd if=/root/test1 of=/root/test2 conv=lcase
 
 ![](https://i.imgur.com/PnWeAbJ.png)
 
-**3.8: Tạo một file có dung lượng cố định**
+**3.7: Tạo một file có dung lượng cố định**
 
 - Ví dụ: Tạo 1 file có dung lượng là 1G
 
