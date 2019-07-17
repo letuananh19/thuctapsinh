@@ -10,7 +10,7 @@
 
 -----------------
 
-#####  <a name="1"> 1. khái niệm </a>
+###  <a name="1"> 1. khái niệm </a>
 
 **dd** là một tiện ích dòng lệnh cho các hệ điều hành giống Unix và giống như Unix với mục đích chính là chuyển đổi và sao chép dữ liệu các tệp.
 
@@ -21,7 +21,7 @@ Trên Linux các ổ đĩa cứng và các thiết bị đặc biệt như ``(/d
 Theo mặc định, **dd** đọc từ stdin và ghi vào thiết bị xuất chuẩn, nhưng chúng có thể được thay đổi bằng cách sử dụng các tùy chọn if (tệp đầu vào) và của (tệp đầu ra).
 - stdin viết tắt của ``standard input`` , stdin là một luồng đầu vào nơi dữ liệu được gửi đến và đọc bởi một chương trình.
 
-##### <a name="2"> 2. Cấu trúc và một số options </a> 
+### <a name="2"> 2. Cấu trúc và một số options </a> 
 **2.1: Cấu trúc**
 ```
 dd if=<địa_chỉ_đầu_vào> of=<địa_chỉ_đầu_ra> option
@@ -58,7 +58,7 @@ Trong đó: “if” đại diện cho input file, và “of” đại diện ch
   - ``GB`` = (1000* 1000 *1000) byte
   - ``G`` = (1024 * 1024 * 1024) byte
 
-##### <a name="3"> 3. Setup </a>
+### <a name="3"> 3. Setup </a>
 **Một số ví dụ thực tế**
 
 **3.1: Sao lưu toàn bộ ổ đĩa**: Để sao lưu toàn bộ ổ đĩa này sang ổ đĩa khác được kết nối cùng hệ thống ta thực hiện lệnh sau:
