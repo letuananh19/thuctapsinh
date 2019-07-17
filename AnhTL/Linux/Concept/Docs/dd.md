@@ -70,7 +70,7 @@ dd if=/dev/sdb of=/dev/sdc
 - Ta có thể thêm tùy chọn đồng bộ hóa ``sync``.
 
 ```
-dd if=/dev/sdb of =/dev/sdc conv = noerror,sync
+dd if=/dev/sdb of =/dev/sdc conv=noerror,sync
 ```
 
 ![](https://i.imgur.com/bnjcqEY.png)
@@ -140,7 +140,15 @@ dd if=/dev/sdb of=/root/file1 bs=1G count=1
 
 ![](https://i.imgur.com/PO0z5G5.png)
 
-Có nghĩ là ``/root/file1`` chỉ có dung lượng là 1G. Khi nào ghi đầy 1G nó sẽ không thể ghi thêm nữa.
+Có nghĩ là ``/root/file1`` chỉ có dung lượng là 1G.
+
+**3.8: Tạo một file từ một file bất kỳ có dung lượng 1G**
+
+```
+dd if=/dev/urandom of=/root/file1 bs=1G count=1
+```
+
+Có nghĩ là dữ liệu sẽ được lấy từ một file bất kỳ.
 
 ## END
 
