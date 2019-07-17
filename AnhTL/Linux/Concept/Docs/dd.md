@@ -57,6 +57,8 @@ Trong đó: “if” đại diện cho input file, và “of” đại diện ch
   - ``GB`` = (1000* 1000 *1000) byte
   - ``G`` = (1024 * 1024 * 1024) byte
 
+Ta có thể sử dụng lệnh: ``man dd`` để có thể hiểu thêm về lệnh ``dd``
+
 ### <a name="3"> 3. Setup </a>
 **Một số ví dụ thực tế**
 
