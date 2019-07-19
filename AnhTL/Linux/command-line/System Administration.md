@@ -124,10 +124,14 @@ tmpfs                     98M   44K   98M   1% /run/user/1000
 
 `` df --help ``
 
-- Kiểm tra phiên bản hệ điều hành.
+- Kiểm tra phiên bản hệ điều hành trên centOS.
 
 `` cat /etc/centos-release ``
-  
+
+- Kiểm tra phiên bản hệ điều hành trên Ubuntu.
+```
+lsb_release -a
+```
  
 **II.Tiến Trình (processus)**
 
