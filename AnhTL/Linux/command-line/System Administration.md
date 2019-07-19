@@ -17,9 +17,6 @@
 
 `` uname -r ``
 
-- Show version.
-
-`` cat /etc/os-release ``
 
 - Khởi động lại máy ngay lập tức.
 
