@@ -20,6 +20,10 @@
 
 [Tài liệu tham khảo](#tltk)
 
+[Thông tin liên quan]
+
+https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/iSCSI%20Helper.md
+
 ------------------
 
 #### <a name="1"> 1. Khái niệm </a>
