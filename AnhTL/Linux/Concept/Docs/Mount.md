@@ -54,7 +54,7 @@ Như vậy là đã umount thành công!
 **2: Mount tự động**
 - Khi ta thực hiện mount xong thì mỗi lần ta reboot ta không cần mount lại nữa vì nó sẽ tự động mount cho ta.
 
-- Để có thể mout tự động thì ta cần phải vào file ``/etc/fstab`` để thêm thiết bị cần mount vào file fstab. sau khi máy khởi động nó sẽ tự động đọc file này và mount những gì được ghi ở trong file.
+- Để có thể mount tự động thì ta cần phải vào file ``/etc/fstab`` để thêm thiết bị cần mount vào file fstab. sau khi máy khởi động nó sẽ tự động đọc file này và mount những gì được ghi ở trong file.
 
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/mo3.png)
 **cột 1**: Lưu tên thiết bị (UUID) hoặc đường dẫn tới file thiết bị trong thư mục /dev. Để biết UUID của thiết bị ta có thể dùng lệnh:
