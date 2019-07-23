@@ -72,7 +72,7 @@ history -w
 history -c
 ```
 
-- Lưu ý rằng điều này sẽ chỉ xóa lịch sử trong bộ nhớ, những thay đổi sẽ được ghi khi người dùng đăng xuất tuy nhiên chúng ta có thể lưu các thay đổi vào tệp ``.bash_history`` ngay lập tức bằng cách chạy ``history -w``.
+- Lưu ý rằng điều này sẽ chỉ xóa lịch sử trong bộ nhớ, những thay đổi sẽ được ghi khi người dùng đăng xuất, tuy nhiên ta có thể lưu các thay đổi vào tệp ``.bash_history`` ngay lập tức bằng cách chạy ``history -w``.
 - Tệp ``.bash_history`` vẫn có thể xóa được.
 
 9. Xóa dòng history cụ thể:
