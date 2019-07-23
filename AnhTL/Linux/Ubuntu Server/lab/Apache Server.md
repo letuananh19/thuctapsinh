@@ -111,14 +111,14 @@ B6: Kích hoạt tệp với ``a2ensite``:
 a2ensite example.com.conf
 ```
 
-- a2 viết tắt của apache2: en viết tắt của enable
+- a2 viết tắt của apache2 : en viết tắt của enable
 
 B7: Vô hiệu hóa trang web mặc định được xác định trong 000-default.conf:
 ```
 a2dissite 000-default.conf
 ```
 
-- a2 viết tắt của apache2: dis viết tắt của disable
+- a2 viết tắt của apache2 : dis viết tắt của disable
 
 B8: Kiểm tra lỗi cấu hình:
 ```
