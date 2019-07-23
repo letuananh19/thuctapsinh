@@ -86,7 +86,8 @@ Quyền truy cập đối với thư mục cũng tương tự như với file. C
   - g+rw: cho phép group sở hữu có quyền đọc và ghi.
   - u+w: cho phép các user còn lại có quyền đọc.
   - a+rws: cho phép toàn bộ user có full quyền (777)
-![img](https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/61856542_314631076117286_5913805534321967104_n.png?_nc_cat=101&_nc_oc=AQl_HyU8ENT2mLaaXtZaUWDavC8qQaxOp98bWrR1heWUDCsPjwaSudZxXK4NqBVre0o&_nc_ht=scontent.fhan5-6.fna&oh=e191763960c54a95083b3eddc3c3ce48&oe=5D552F39)
+
+![img](https://i.imgur.com/iDuy4Lh.png)
 
 - VD: Gán quyền thực thi ``file1`` cho các user còn lại
   - ``chmod u+x file1``
