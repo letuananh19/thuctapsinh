@@ -20,11 +20,17 @@
 ### <a name="1"> 1. Khái niệm </a>
 Apache là phần mềm web server miễn phí mã nguồn mở. Tên chính thức của Apache là Apache HTTP Server, được điều hành và phát triển bởi Apache Software Foundation.
 
+Apache hoạt động trên port 80
+
 Các yêu cầu gửi tới máy chủ sử dụng phương thức HTTP còn được gọi tắt là HTTP request.
 
 - **Ví dụ**: khi ta sử dụng trình duyệt ta có thể gửi đi một HTTP request đơn giản bằng cách nhập một địa chỉ IP (hoặc một URL chứa tên miền). Khi đó là ta đã gửi đi một HTTP request tới một máy chủ trên internet. Địa chỉ máy chủ này được xác định bởi địa chỉ IP (hoặc URL với tên miền) mà ta đã nhập vào.
 
-Do được cài đặt trên web server (phần cứng) nên Apache hay được gọi là web server hay HTTP server. 
+Do được cài đặt trên web server (phần cứng) nên Apache được gọi là web server hay HTTP server. 
+
+Apache có các phiên bản dưới đây:
+![](https://i.imgur.com/RRlQ9YK.png)
+
 ### <a name="2"> 2. Cách thức hoạt động </a>
 Tuy được gọi là ``Apache web server`` nhưng nó không phải là server vật lý mà **Apache** chính là một phần mềm chạy trên server đó. Nhiệm vụ chính của Apache là thiết lập kết nối giữa server và browser (Firefox, Chrome, Safari,...), sau đó chịu trách nhiệm chuyển file qua lại giữa giữa server và browser (cấu trúc hai chiều client-server). Apache hoạt động tốt với cả server Unix và Windows và là phần mềm đa nền tảng.
 
