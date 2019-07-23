@@ -15,6 +15,8 @@
 
 --------------------
 
+![](https://s24255.pcdn.co/wp-content/uploads/2015/03/Apache-http-server.png)
+
 ### <a name="1"> 1. Khái niệm </a>
 Apache là phần mềm web server miễn phí mã nguồn mở. Tên chính thức của Apache là Apache HTTP Server, được điều hành và phát triển bởi Apache Software Foundation.
 
