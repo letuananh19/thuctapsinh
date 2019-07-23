@@ -1,6 +1,6 @@
 # History in linux
 
-**Note: Hãy cẩn thận khi sử dụng các lệnh history vì nó có thể làm dối loạn hệ thống của bạn**
+**Note: Hãy cẩn thận khi sử dụng các lệnh history vì nó có thể làm dối loạn hệ thống**
 
 **1 Số cú pháp về lệnh: ``history``**
 
