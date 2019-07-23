@@ -1,5 +1,7 @@
 # Setup Apache Server on Ubuntu
 
+![](https://s24255.pcdn.co/wp-content/uploads/2014/04/apache.jpg)
+
 B1: Ta update lại các gói trong hệ thống.
 ```
 apt update
