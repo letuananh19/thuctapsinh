@@ -44,7 +44,7 @@ http://your_server_ip
 
 **Phần 2: Thiết lập máy chủ ảo**
 
-Khi sử dụng máy chủ web Apache, ta có thể sử dụng máy chủ ảo để đóng gói chi tiết cấu hình và lưu trữ nhiều hơn một tên miền từ một máy chủ. Ta sẽ thiết lập một tên miền được gọi là ``example.com`` ( Có thể thay thế bằng tên miền khác ) 
+Khi sử dụng máy chủ web Apache, ta có thể sử dụng máy chủ ảo để đóng gói chi tiết cấu hình và lưu trữ nhiều hơn một tên miền từ một máy chủ. Ta sẽ thiết lập một tên miền được gọi là ``example.com`` ( Có thể thay thế bằng tên miền khác ) . Với điều kiện là tên miền đã được thuê.
 
 B1: Tạo thư mục cho ``example.com``
 ```
