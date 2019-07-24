@@ -32,6 +32,7 @@ mkdir /var/www/html/web1
 mkdir /var/www/html/web2
 mkdir /var/www/html/web3
 ```
+
   - Tạo nội dung file index.html cho các website:
 ```
 vi /var/www/html/web1/index.html
