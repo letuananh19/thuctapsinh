@@ -58,8 +58,6 @@
 
 [30. dd](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/dd.md)
 
-[31. iSCSI helper](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/iSCSI%20Helper.md)
+[31. Apache](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/Apache.md)
 
-[32. Apache](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/Apache.md)
-
-[33. History](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/History.md)
+[32. History](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/History.md)
