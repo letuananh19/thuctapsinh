@@ -79,7 +79,7 @@ Apache web server là lựa chọn khá tối ưu nếu ta muốn vận hành we
 - **/etc/apache2/conf-available/** và **/etc/apache2/conf-enabled/**: Các thư mục này có cùng mối quan hệ với các thư mục **sites-available** và **sites-enabled**, nhưng được sử dụng để lưu trữ các đoạn cấu hình không thuộc về máy chủ ảo. Các tập tin trong thư mục **conf-available** có thể được kích hoạt bằng lệnh ``a2enconf`` và vô hiệu hóa bằng lệnh ``a2disconf``.
 - **/etc/apache2/mods-available/** và **/etc/apache2/mods-enabled/**: Các thư mục này chứa các mô-đun có sẵn và được kích hoạt. Các tệp kết thúc bằng .load chứa các đoạn để tải các mô-đun cụ thể. conf chứa cấu hình cho các mô-đun đó. Các mô-đun có thể được kích hoạt và vô hiệu hóa bằng cách sử dụng lệnh ``a2enmod`` và ``a2dismod``.
 
-**Nhật ký máy chủ**
+**Server log**
 
 - **/var/log/apache2/access.log**: Theo mặc định, mọi yêu cầu đến máy chủ web của bạn được ghi lại trong tệp nhật ký này trừ khi Apache được cấu hình để làm khác.
 - **/var/log/apache2/error.log**: Theo mặc định, tất cả các lỗi được ghi lại trong tập tin này. Lệnh ``LogLevel`` trong cấu hình Apache chỉ định mức độ chi tiết của các bản ghi lỗi.
