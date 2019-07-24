@@ -26,41 +26,27 @@
   ```
 
 - **B2:** Thêm dữ liệu cho các trang web :
-  - Tạo thư mục riêng cho các website :
+
+  - Tạo thư mục riêng để lưu chữ cho file VirtualHost:
+
 ```
-mkdir /var/www/html/web1
-mkdir /var/www/html/web2
-mkdir /var/www/html/web3
+mkdir /etc/httpd/sites-available
+mkdir /etc/httpd/sites-enabled
 ```
 
-  - Tạo nội dung file index.html cho các website:
-```
-vi /var/www/html/web1/index.html
+  - Để apache server chạy các file từ directory sites-enabled , thêm lệnh sau vào cuối file httpd.conf :
 
-<h1> Đây là web1 </h1>
 ```
-```
-vi /var/www/html/web2/index.html
+vi /etc/httpd/conf/httpd.conf
 
-<h1> Đây là web2 </h1>
-```
-```
-vi /var/www/html/web3/index.html
-
-<h1> Đây là web3 </h1>
+IncludeOptional sites-enabled/*.conf
 ```
 
-- **B3:** Cấp quyền cho các thư mục vừa tạo :
-```
-chown -R apache:apache /var/www/html/
-chmod -R 755 /var/www/html
-```
-
-- **B4:** Cấu hình Virtual host:
+- **B3:** Cấu hình Virtual host:
   - Tạo các file có đuôi ``.conf`` cho từng virtual host:
   - Phần <VirtualHost *:port> phải nhập đúng với số port Listen
 ```
-# vi /etc/httpd/conf.d/web1.conf
+# vi /etc/httpd/sites-available/web1.conf
 <VirtualHost *:80>
     ServerName web1.com
     ServerAlias www.web1.com
@@ -70,7 +56,7 @@ chmod -R 755 /var/www/html
 </VirtualHost>
 ```
 ```
-# vi /etc/httpd/conf.d/web2.conf
+# vi /etc/httpd/sites-available/web2.conf
 <VirtualHost *:8080>
     ServerName web2.com
     ServerAlias www.web2.com
@@ -80,7 +66,7 @@ chmod -R 755 /var/www/html
 </VirtualHost>
 ```
 ```
-# vi /etc/httpd/conf.d/web3.conf
+# vi /etc/httpd/sites-available/web3.conf
 <VirtualHost *:9000>
     ServerName web3.com
     ServerAlias www.web3.com
@@ -103,3 +89,30 @@ chmod -R 755 /var/www/html
 ``ErrorLog``: thư mục chứa file log lỗi
 
 ``CustomLog``: thư mục chứa file log truy cập
+
+- **B4:** Enable Virtual Host Files :
+
+  - Ta tạo các symbolic link của các file cấu hình virtual host vào trong directory sites-enabled:
+```
+sudo ln -s /etc/httpd/sites-available/web1.conf /etc/httpd/sites-enabled/web1.conf
+sudo ln -s /etc/httpd/sites-available/web2.conf /etc/httpd/sites-enabled/web2.conf
+sudo ln -s /etc/httpd/sites-available/web3.conf /etc/httpd/sites-enabled/web3.conf
+```
+
+  - Sau đó ta restart lại service để áp dụng các thay đổi :
+```
+sudo apachectl restart 
+```
+
+- **B5:** Cấu hình bên client :
+
+  - Do không có một domain thật , nên ta cần cấu hình file hosts ở một máy client để có thể truy cập vào web server (Ở ví dụ đây máy client chạy win 10 ):
+```
+vi /etc/hosts
+```
+192.168.230.140 www.web1.com
+192.168.230.140 www.web2.com
+192.168.230.140 www.web3.com
+```
+
+# END
