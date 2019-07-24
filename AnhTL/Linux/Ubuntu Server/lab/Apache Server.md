@@ -163,4 +163,7 @@ B3: restart lại dịch vụ
 systemctl restart apache2.service
 ```
 
+![](https://i.imgur.com/tlOgK04.png)
+
 ## END
+
