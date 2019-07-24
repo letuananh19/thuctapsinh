@@ -109,6 +109,7 @@ Lưu tệp khi hoàn thành.
 - Folder ``site-Available``: Thư mục này có các tệp cấu hình cho Máy chủ ảo Apache2. Máy chủ ảo cho phép Apache2 được cấu hình cho nhiều trang web có cấu hình riêng biệt.
 - Folder ``sites-enabled``: Chứa các liên kết đến thư mục /etc/apache2/sites-Available. Tương tự như vậy khi một tệp cấu hình trong ``sites-available được liên kết với nhau, trang được cấu hình bởi nó sẽ hoạt động sau khi Apache2 được khởi động lại.
   - Ta không nên chỉnh sửa trong thư mục ``sites-enable``
+
 B6: Kích hoạt tệp với ``a2ensite``:
 ```
 a2ensite example.com.conf
@@ -137,5 +138,10 @@ systemctl restart apache2
 ```
 
 - Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
+
+- Ta có thể dùng lệnh dưới đây để show ra cấu hình file ``virtualhost``:
+```
+apache2ctl -S
+```
 
 ## END
