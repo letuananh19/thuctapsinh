@@ -111,7 +111,9 @@ sudo apachectl restart
 vi /etc/hosts
 ```
 192.168.230.140 www.web1.com
+
 192.168.230.140 www.web2.com
+
 192.168.230.140 www.web3.com
 ```
 
