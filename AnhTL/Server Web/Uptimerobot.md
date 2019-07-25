@@ -89,4 +89,12 @@ Trong đó:
 
 ![](https://i.imgur.com/8UHQDUQ.png)
 
+### 3. Nhận thông báo
+
+- Khi uptime nhận thấy trang web có thay đổi trạng thái thì nó sẽ báo về gmail, telegram...(tùy theo ta chỉnh)
+
+![](https://i.imgur.com/LSaoGCA.png)
+
+![](https://i.imgur.com/aBfBwcz.png)
+
 ## END
