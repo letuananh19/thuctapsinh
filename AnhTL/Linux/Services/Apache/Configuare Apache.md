@@ -188,18 +188,19 @@ http://192.168.230.141
 
 ![](https://i.imgur.com/KNkx74X.png)
 
-- Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
+- Như vậy là ta đã setup Apache với Trang web của riêng mình.
 
 **Phần 3: Cấu hình với tên miền**
 
 - Vì ta không có tên miền thật nên ta sẽ phải điền tên miền ta vừa tạo trong Virtual Host vào trong file ``host``
 - Đường dẫn: ``C:\Windows\System32\drivers\etc``
-
 - Truy cập vào file ``host`` ta điền:
 
 ![](https://i.imgur.com/nAYteUk.png)
 
 - Bây giờ ta có thể truy cập vào Server Web bằng tên miền ``http://www.example.com/``
+
+![](https://i.imgur.com/i6AazPs.png)
 
 **Phần 4: Cấu hình SSL**
 
