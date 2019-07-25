@@ -4,77 +4,202 @@
 
 ![](https://i.imgur.com/oCLCxTz.png)
 
-![](https://i.imgur.com/sLnip5A.png)
+![](https://i.imgur.com/lhbfAmz.png)
 
 **Triển khai:**
 
-**B1:** Chỉnh sửa file httpd.conf
+- Có 2 cách để cài đặt Apache
+
+**Cách 1: cài đặt bằng lệnh apt-get**
+
+B1: Ta update lại các gói trong hệ thống.
 ```
-vi /etc/httpd/conf/httpd.conf
-```
-
-Sau khi vào ta dùng lệnh `` :set nu `` để hiển thị số dòng
-
-![](https://i.imgur.com/ZWaTGox.png)
-
-![](https://i.imgur.com/lBmziHI.png)
-
-- Ta chỉnh sửa 1 số thứ:
-  - Ở dòng 86, sửa ``localhost``thành tên domain của ta:
-  ![](https://i.imgur.com/JhuQY65.png)
-  - Ở dòng 95, sửa ``www.example.com`` thành tên domain , đồng thời bỏ dấu ``#`` ở đầu dòng:
-  ![](https://i.imgur.com/p3QSWUO.png)
-  - Ở dòng 119, chỉ định đường dẫn tới thư mục chính lưu nội dung trang web:
-  ![](https://i.imgur.com/PQHrsZv.png)
-  - Ở dòng 151, sửa none thành All:
-  ![](https://i.imgur.com/SLpQTMW.png)
-  - Ở dòng 164, chỉ định file index.html là nội dung chính của website :
-  ![](https://i.imgur.com/e7BcTiD.png)
-
-Xong thì ta lưu và thoát.
-
-**B2:** Chỉnh sửa nội dung trang web ( file index.html ).
-```
-vi /var/www/html/index.html
+apt update
 ```
 
-<h1> Công Ty TNHH Phần Mềm Nhân Hòa </h1>
-
-Nội dung viết tùy ý bạn.
-
-![](https://i.imgur.com/K8OXbre.png)
-
-**B3:** Khởi động dịch vụ httpd.
+B2: Cài Apache.
 ```
-systemctl start httpd
-
-systemctl enable httpd
+apt install apache2
 ```
 
-**B4:** Cấu hình Firewalld cho phép dịch vụ http ( để các máy Client có thể truy cập ).
+B3: Kiểm tra Firewall
 ```
-firewall-cmd --zone=public --permanent --add-service=http
-
-firewall-cmd --reload
+ufw app list
 ```
-
-**B5:** Trên máy Client Windows 10: Ta vào trình duyệt web và gõ: ``http://192.168.230.140/``
-
-![](https://i.imgur.com/nGWxzRB.png)
-
-
-**disable Start page on Apache**
-
-- Khi chưa tạo file ``index.html`` thì truy cập địa chỉ của Web_Server, nó sẽ mặc định hiện start page ra như dưới:
-
-![](https://i.imgur.com/yIZCvmk.png)
-
-- Nếu không muốn hiện Start page, ta có thể xóa file ``welcome.conf`` để đến thẳng folder Web:
-
+Sau đó ta cho phép ``Apache`` hoạt động.
 ```
-rm -f /etc/httpd/conf.d/welcome.conf
-
-systemctl restart httpd
+ufw allow 'Apache'
+```
+Kiểm tra lại.
+```
+ufw status
 ```
 
-![](https://i.imgur.com/mqNBCdG.png)
+B4: Kiểm tra xem dịch vụ đang chạy chưa.
+```
+systemctl status apache2
+```
+
+![](https://i.imgur.com/9ejpsLy.png)
+
+- Bây giờ ta có thể truy cập vào trang web apache
+
+```
+http://your_server_ip
+```
+
+- Ta sẽ thấy trang web Ubuntu 18.04 Apache mặc định:
+
+![](https://i.imgur.com/SxP9ncM.png)
+
+**Cách 2: Cài đặt Apache bằng source**
+
+B1: Ta dùng lệnh ``wget`` để download file từ trang chủ của Apache về, lưu vào đâu ta muốn.
+
+- Ở đây ta lưu vào thư mục ``/root``.
+```
+wget http://mirror.downloadvn.com/apache//httpd/httpd-2.4.39.tar.bz2
+```
+
+B2: Giải nén thư mục vừa download về.
+```
+tar jxvf httpd-2.4.39.tar.bz2
+```
+
+- Nó sẽ hiện ta thư mục mang tên ``httpd-2.4.39``
+
+![](https://i.imgur.com/EFMiNSH.png)
+
+B3: Biên dịch file:
+```
+cd httpd-2.4.39
+./configure
+make
+make install
+```
+
+**Phần 2: Thiết lập máy chủ ảo**
+
+Khi sử dụng máy chủ web Apache, ta có thể sử dụng máy chủ ảo để đóng gói chi tiết cấu hình và lưu trữ nhiều hơn một tên miền từ một máy chủ. Ta sẽ thiết lập một tên miền được gọi là ``example.com`` ( Có thể thay thế bằng tên miền khác ) . Với điều kiện là tên miền đã được thuê.
+
+B1: Tạo thư mục cho ``example.com``
+```
+mkdir -p /var/www/example.com/html
+```
+
+B2: Gán quyền sở hữu thư mục. 
+```
+chown -R $USER:$USER /var/www/example.com/html
+```
+
+B3: Chỉnh quyền truy cập
+```
+chmod -R 755 /var/www/example.com
+```
+
+B4: Tạo một ``index.html`` để viết nội dung hiển thị
+```
+vi /var/www/example.com/html/index.html
+```
+
+- Bên trong index.html ta có thể viết:
+```
+ <html>
+    <head>
+        <title>Welcome to Example.com!</title>
+    </head>
+    <body>
+        <h1>Success!  The example.com server block is working!</h1>
+    </body>
+</html>
+```
+
+![](https://i.imgur.com/i4mJxRa.png)
+
+Lưu tệp khi hoàn thành.
+
+B5: Tạo một tệp máy chủ ảo mới tại: ``/etc/apache2/sites-available/example.com.conf``
+```
+vi /etc/apache2/sites-available/example.com.conf
+```
+Trong file ``example.com.conf`` ta có thể viết như dưới:
+```
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/example.com/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    <Directory /var/www/example.com/html>
+    AllowOverride AuthConfig FileInfo Limit Options=IncludesNOEXEC,MultiViews,SymLinksIfOwnerMatch,FollowSymLinks,None
+    Options -ExecCGI -Includes +IncludesNOEXEC -Indexes
+</Directory>
+</VirtualHost>
+```
+
+![](https://i.imgur.com/R3GtS3t.png)
+
+Lưu tệp khi hoàn thành.
+
+- Folder ``site-Available``: Thư mục này có các tệp cấu hình cho Máy chủ ảo Apache2. Máy chủ ảo cho phép Apache2 được cấu hình cho nhiều trang web có cấu hình riêng biệt.
+- Folder ``sites-enabled``: Chứa các liên kết đến thư mục /etc/apache2/sites-Available. Tương tự như vậy khi một tệp cấu hình trong ``sites-available được liên kết với nhau, trang được cấu hình bởi nó sẽ hoạt động sau khi Apache2 được khởi động lại.
+  - Ta không nên chỉnh sửa trong thư mục ``sites-enable``
+
+B6: Kích hoạt tệp với ``a2ensite``:
+```
+a2ensite example.com.conf
+```
+
+- a2 viết tắt của apache2 : en viết tắt của enable
+
+B7: Vô hiệu hóa trang web mặc định được xác định trong 000-default.conf:
+```
+a2dissite 000-default.conf
+```
+
+- a2 viết tắt của apache2 : dis viết tắt của disable
+
+B8: Kiểm tra lỗi cấu hình:
+```
+apache2ctl configtest
+```
+Ta sẽ thấy nó hiện như sau:
+
+![](https://i.imgur.com/6lw7wI6.png)
+
+B10: Khởi động lại Apache để thực hiện các thay đổi của bạn:
+```
+systemctl restart apache2
+```
+
+- Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
+
+- Ta có thể dùng lệnh dưới đây để show ra cấu hình file ``virtualhost``:
+```
+apache2ctl -S
+```
+
+**Cấu hình SSL**
+
+B1: kích hoạt ssl.
+```
+a2enmod ssl
+```
+
+B2: kích hoạt file default-ssl
+
+- Tệp cấu hình HTTPS mặc định trong /etc/apache2/sites-av Available / default- ssl.conf . Để Apache2 cung cấp HTTPS
+```
+a2ensite default-ssl
+```
+
+B3: restart lại dịch vụ
+```
+systemctl restart apache2.service
+```
+
+![](https://i.imgur.com/tlOgK04.png)
+
+## END
+
