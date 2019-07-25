@@ -6,9 +6,9 @@
 - Các **module** được nạp vào **Apache** gồm 2 loại :
     - `static` : có nghĩa là **module** đó được tích hợp vào trong mã chạy **Apache** ( tích hợp khi build từ code ) , module này luôn có - không hủy được .
     - `shared` : có nghĩa module đó nằm trên một file độc lập , bạn cấu hình đề khi **Apache** chạy nó tải vào , nếu chức năng của **module** đó bạn không cần nữa thì không tải .
-- Để xem các **module** được nạp vào **Apache** , dùng lệnh :
+- Để xem các **module** được nạp vào **Apache**, ta dùng lệnh :
     ```
-    # httpd -M
+    apachectl -M
     ```
     
 ![](https://i.imgur.com/xaApsEE.png)
@@ -16,15 +16,15 @@
 - Để nạp thêm **module** :
     - **B1 :** Mở file cấu hình dịch vụ **Apache** :
         ```
-        # vi /etc/httpd/conf/httpd.conf
+        # vi /etc/apache2/mods-available
         ```
     - **B2 :** Thêm vào dòng với chỉ thị `LoadModule` :
         ```
         LoadModule module_name file_module_location
         ```
-        - **VD :** Thêm `status_module` tại `modules/mod_status.so` thì thêm dòng :
+        - **VD :** Thêm ``dbd_module`` ta phải thêm đường dẫn đến thư mục ``/usr/lib/apache2/modules`` kèm theo ``mod_tên-modules.so``:
             ```
-            LoadModule status_module modules/mod_status.so
+            LoadModule dbd_module /usr/lib/apache2/modules/mod_dbd.so
             ```
         - Khi muốn tắt nhanh **module** , thêm dấu `#` vào trước dòng `LoadModule` .
         
