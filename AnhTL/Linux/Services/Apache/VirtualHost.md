@@ -1,120 +1,116 @@
-# Virtual host
+# Tạo trang web của riêng mình với VirtualHost
 
-### 1. Khái niệm
+- Theo mặc định, Apache đi kèm với một trang web cơ bản (trang web mà ta đã thấy trong bước trước) được bật. Ta có thể sửa đổi nội dung của nó trong /var/www/html hoặc cài đặt bằng cách chỉnh sửa tệp ``Virtual Host`` được tìm thấy trong /etc/apache2/sites-enabled/000-default.conf.
+-  Ta sẽ để cấu hình  ``Virtual Host`` Apache mặc định trỏ đến www.example.com và thiết lập máy chủ tại ``example.com`` .
 
-**Virtual Host** là một cấu hình trong Apache để cho phép nhiều domain cùng chạy trên một máy chủ. 
-- Có 2 dạng virtual host:
-  - **Port-based**: Mỗi Website gán vào 1 port của IP
-  - **Name-based**: Nhiều tên miền chạy trên 1 địa chỉ IP
-
-### 2. Cấu hình
-**2.1: IP-based**
-
-- **B1:** Thêm các port khác nhau cho các IP**
-  - Chỉnh sửa file ``httpd.conf``
-  ```
-  vi /etc/httpd/conf/httpd.conf
-  :set nu (để hiển thị số dòng)
-  ```
-  
-    - Tìm tới dòng 42 và thêm các port mở thêm ( số lượng port LISTEN bằng với số website ):
-  ![](https://i.imgur.com/YqoflKH.png)
-  
-  - Khởi động lại dịch vụ httpd :
-  ```
-  systemctl restart httpd
-  ```
-
-- **B2:** Thêm dữ liệu cho các trang web :
-
-  - Tạo thư mục riêng để lưu chữ cho file VirtualHost:
-
+B1: Tạo thư mục cho ``example.com``
 ```
-mkdir /etc/httpd/sites-available
-mkdir /etc/httpd/sites-enabled
+mkdir -p /var/www/example.com/html
 ```
 
-  - Để apache server chạy các file từ directory sites-enabled , thêm lệnh sau vào cuối file httpd.conf :
-
+B2: Gán quyền sở hữu thư mục. 
 ```
-vi /etc/httpd/conf/httpd.conf
-
-IncludeOptional sites-enabled/*.conf
+chown -R www-data:www-data /var/www/example.com/html
 ```
 
-- **B3:** Cấu hình Virtual host:
-  - Tạo các file có đuôi ``.conf`` cho từng virtual host:
-  - Phần <VirtualHost *:port> phải nhập đúng với số port Listen
+B3: Chỉnh quyền truy cập
 ```
-# vi /etc/httpd/sites-available/web1.conf
+chmod -R 755 /var/www/example.com
+```
+
+B4: Tạo một ``index.html`` để viết nội dung hiển thị
+```
+vi /var/www/example.com/html/index.html
+```
+
+- Bên trong index.html ta có thể viết:
+```
+ <html>
+    <head>
+        <title>Welcome to Example.com!</title>
+    </head>
+    <body>
+        <h1>Success!  The example.com server block is working!</h1>
+    </body>
+</html>
+```
+
+![](https://i.imgur.com/i4mJxRa.png)
+
+Lưu tệp khi hoàn thành.
+
+B5: Tạo một tệp Virtual Host để hiển thị những gì ta vừa tạo ở trên:
+
+```
+vi /etc/apache2/sites-available/example.com.conf
+```
+Trong file ``example.com.conf`` ta có thể viết như dưới:
+```
 <VirtualHost *:80>
-    ServerName web1.com
-    ServerAlias www.web1.com
-    DocumentRoot /var/www/html/web1
-    ErrorLog /var/www/html/web1/error.log
-    CustomLog /var/www/html/web1/access.log combined
+    ServerAdmin admin@example.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/example.com/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    <Directory /var/www/example.com/html>
+    AllowOverride AuthConfig FileInfo Limit Options=IncludesNOEXEC,MultiViews,SymLinksIfOwnerMatch,FollowSymLinks,None
+    Options -ExecCGI -Includes +IncludesNOEXEC -Indexes
+</Directory>
 </VirtualHost>
 ```
+
+![](https://i.imgur.com/R3GtS3t.png)
+
+Lưu tệp khi hoàn thành.
+
+- Folder ``site-Available``: Thư mục này có các tệp cấu hình cho Máy chủ ảo Apache2. Máy chủ ảo cho phép Apache2 được cấu hình cho nhiều trang web có cấu hình riêng biệt.
+- Folder ``sites-enabled``: Chứa các liên kết đến thư mục /etc/apache2/sites-Available. Tương tự như vậy khi một tệp cấu hình trong ``sites-available được liên kết với nhau, trang được cấu hình bởi nó sẽ hoạt động sau khi Apache2 được khởi động lại.
+  - Ta không nên chỉnh sửa trong thư mục ``sites-enable``
+
+B6: Kích hoạt tệp với ``a2ensite``:
 ```
-# vi /etc/httpd/sites-available/web2.conf
-<VirtualHost *:8080>
-    ServerName web2.com
-    ServerAlias www.web2.com
-    DocumentRoot /var/www/html/web2
-    ErrorLog /var/www/html/web2/error.log
-    CustomLog /var/www/html/web2/access.log combined
-</VirtualHost>
-```
-```
-# vi /etc/httpd/sites-available/web3.conf
-<VirtualHost *:9000>
-    ServerName web3.com
-    ServerAlias www.web3.com
-    DocumentRoot /var/www/html/web3
-    ErrorLog /var/www/html/web3/error.log
-    CustomLog /var/www/html/web3/access.log combined
-</VirtualHost>
-```
-  
-  - Trong đó :
-  
-``<VirtualHost></VirtualHost>`` Đây là cặp thẻ báo hiệu mở đầu và kết thúc của một khai báo về Vhost. 
-
-``ServerName``: tên của website dùng để gõ trên trình duyệt
-
-``ServerAlias``: tên gọi khác của website ( thường cấu hình www hoặc non www)
-
-``DocumentRoot``: đường dẫn đến thư mục source code
-
-``ErrorLog``: thư mục chứa file log lỗi
-
-``CustomLog``: thư mục chứa file log truy cập
-
-- **B4:** Enable Virtual Host Files :
-
-  - Ta tạo các symbolic link của các file cấu hình virtual host vào trong directory sites-enabled:
-```
-sudo ln -s /etc/httpd/sites-available/web1.conf /etc/httpd/sites-enabled/web1.conf
-sudo ln -s /etc/httpd/sites-available/web2.conf /etc/httpd/sites-enabled/web2.conf
-sudo ln -s /etc/httpd/sites-available/web3.conf /etc/httpd/sites-enabled/web3.conf
+a2ensite example.com.conf
 ```
 
-  - Sau đó ta restart lại service để áp dụng các thay đổi :
-```
-sudo apachectl restart 
-```
+- a2 viết tắt của apache2 : en viết tắt của enable
 
-- **B5:** Cấu hình bên client :
-
-  - Do không có một domain thật , nên ta cần cấu hình file hosts ở một máy client để có thể truy cập vào web server (Ở ví dụ đây máy client chạy win 10 ):
+B7: Vô hiệu hóa trang web mặc định được xác định trong 000-default.conf:
 ```
-vi /etc/hosts
-```
-192.168.230.140 www.web1.com
-
-192.168.230.140 www.web2.com
-
-192.168.230.140 www.web3.com
+a2dissite 000-default.conf
 ```
 
-# END
+- a2 viết tắt của apache2 : dis viết tắt của disable
+
+B8: Kiểm tra lỗi cấu hình:
+```
+apache2ctl configtest
+```
+Ta sẽ thấy nó hiện như sau:
+
+![](https://i.imgur.com/6lw7wI6.png)
+
+B10: Reload để thực hiện các thay đổi của bạn:
+```
+service apache2 reload
+```
+
+- Bây là ta truy cập vào địa chỉ IP của Server Web
+```
+http://192.168.230.141
+```
+
+![](https://i.imgur.com/KNkx74X.png)
+
+- Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
+
+**Phần 3: Cấu hình với tên miền**
+
+- Vì ta không có tên miền thật nên ta sẽ phải điền tên miền ta vừa tạo trong Virtual Host vào trong file ``host``
+- Đường dẫn: ``C:\Windows\System32\drivers\etc``
+
+- Truy cập vào file ``host`` ta điền:
+
+![](https://i.imgur.com/nAYteUk.png)
+
+- Bây giờ ta có thể truy cập vào Server Web bằng tên miền ``http://www.example.com/``
