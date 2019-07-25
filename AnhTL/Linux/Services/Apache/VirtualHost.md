@@ -64,9 +64,13 @@ Trong file ``example.com.conf`` ta có thể viết như dưới:
 
 Lưu tệp khi hoàn thành.
 
-- Folder ``site-Available``: Thư mục này có các tệp cấu hình cho Máy chủ ảo Apache2. Máy chủ ảo cho phép Apache2 được cấu hình cho nhiều trang web có cấu hình riêng biệt.
-- Folder ``sites-enabled``: Chứa các liên kết đến thư mục /etc/apache2/sites-Available. Tương tự như vậy khi một tệp cấu hình trong ``sites-available được liên kết với nhau, trang được cấu hình bởi nó sẽ hoạt động sau khi Apache2 được khởi động lại.
-  - Ta không nên chỉnh sửa trong thư mục ``sites-enable``
+- Trong đó:
+
+  - ServerName : tên của website dùng để gõ trên trình duyệt
+  - ServerAlias : tên gọi khác của website ( thường cấu hình www hoặc non www)
+  - DocumentRoot : đường dẫn đến thư mục source code
+  - ErrorLog : thư mục chứa file log lỗi
+  - CustomLog : thư mục chứa file log truy cập
 
 B6: Kích hoạt tệp với ``a2ensite``:
 ```
