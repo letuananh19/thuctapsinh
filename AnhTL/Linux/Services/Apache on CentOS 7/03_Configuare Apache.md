@@ -1,12 +1,5 @@
 # Cấu hình Apache cơ bản
 
-**Ta có mô hình:**
-
-![](https://i.imgur.com/oCLCxTz.png)
-
-![](https://i.imgur.com/sLnip5A.png)
-
-**Triển khai:**
 
 Phần 1: Cài đặt apache bằng lệnh yum
 
