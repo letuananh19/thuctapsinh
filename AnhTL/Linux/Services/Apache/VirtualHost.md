@@ -65,7 +65,7 @@ Trong file ``example.com.conf`` ta có thể viết như dưới:
 Lưu tệp khi hoàn thành.
 
 - Trong đó:
-
+  - <VirtualHost></VirtualHost> Đây là cặp thẻ báo hiệu mở đầu và kết thúc của một khai báo về Vhost. 
   - ServerName : tên của website dùng để gõ trên trình duyệt
   - ServerAlias : tên gọi khác của website ( thường cấu hình www hoặc non www)
   - DocumentRoot : đường dẫn đến thư mục source code
