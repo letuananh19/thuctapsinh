@@ -1,7 +1,10 @@
 # Basic about ``uptimerobot``
 
 **Khái niệm**
-- UptimeRobot là một trang web giúp ta theo dõi trạng thái hoạt động của trang web.
+- UptimeRobot là một trang web miễn phí giúp ta theo dõi trạng thái hoạt động của trang web.
+  - Kiểm tra Ping.
+  - Kiểm tra Port.
+  - Kiểm tra dịch vụ.
 - Nó sẽ theo dõi các trang web của ta cứ sau 5 phút và thông báo cho ta nếu trang web của bị sập.
 
 **Cách thức hoạt động**
@@ -28,23 +31,26 @@
 ![](https://i.imgur.com/T4IOhRk.png)
 
 - Còn tùy thuộc vào ta muốn theo dõi theo kiểu nào.
-  - Trong đó: 
+  
+    ![](https://i.imgur.com/uj7Fo6w.png)
 
-- Ở đây ta chọn kiểu ``https``:
+  - Trong đó:
+     - ``HTTPS``: Nó sẽ quét cứ 5 phút 1 lần tới ``https`` của trang web
+     - ``Keyword``: Nó sẽ gửi thông báo về gmail, telegram... khi có 1 một từ khóa ta cài đặt từ trước xuất hiện trên trang web, hoặc ngược lại ( do ta setup ).
+     - ``Ping``: Nó sẽ ping tới trang web của ta để xem địa chỉ ip của ta có ổn định không.
+     - ``Port``: Nó sẽ quét port của trang web, để xem port được bật, tắt khi nào.
+   - Ở đây ta chọn kiểu ``https``:
 
 ![](https://i.imgur.com/Ox3qUuN.png)
 
 Trong đó:
-
 **1**
-
 - Monitor Type*: là kiểu theo dõi.
 - Friendly Name*: Là tên hiển thị thay thế cho đường dẫn.
 - URL (or IP)*: là Ta điền địa chỉ IP hoặc đường dẫn trang web ta muốn theo dõi.
 - Monitoring Interval*: Là thời gian giám sát trang web. Có nghĩa là cứ sau 5 phút nó sẽ quét trang web của ta 1 lần để xem có vấn đề gì xảy ra không ( ở đây ta để 5 minutes ).
 
 **2**
-
 - Ở đây ta tích vào gmail của ta, để khi có vấn đề xảy ra nó sẽ báo về đúng địa chỉ gmail ấy ( ta có thể add thêm 1 số ứng dụng để nó có thể gửi cảnh báo về ở trong phần ``My Settings``)
 
   - Cuối cùng sau khi lựa chọn xong ta nhấn ``Create Monitor`` để tạo:
@@ -56,7 +62,6 @@ Trong đó:
 Ta chia làm 3 phần:
 
 Trong đó:
-
 **1**
 
 -  ``UP MONITORS``: 1 có nghĩa là tương ứng với số sang web ta theo dõi, Nhưng với điều kiện là vẫn hoạt động bình thường. Khi ta add thêm 1 trang web nữa sẽ là 2.
@@ -71,12 +76,10 @@ Trong đó:
     ![](https://i.imgur.com/VKNZerJ.png)
     
 **2**
-
 - Phần ``Overall Uptime``: là tổng thời gian hoạt động của trang web.
 -  ``Latest downtime``: Hiển thị thời gian từ lúc trang web không hoạt động cho đến nay
 
 **3**
-
 - Trong phần này sẽ hiển thị trạng thái, thời gian về trang web ta theo dõi.
 
     ![](https://i.imgur.com/o4wvRuu.png)
@@ -89,7 +92,6 @@ Trong đó:
 - ``Duration``: Nói lên thời gian của lần thay đổi trạng thái gần nhất.
 
 ### 2. My settings
-
 ![](https://i.imgur.com/6fdf86y.png)
 
 - Để chỉnh múi giờ và add thêm cảnh báo về các trang khác nhau ta có thể vào phần ``My settings``
