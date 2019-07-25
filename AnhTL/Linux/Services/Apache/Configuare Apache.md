@@ -6,7 +6,7 @@
 
 ![](https://i.imgur.com/lhbfAmz.png)
 
-**Triển khai:**
+**Phần 1: Triển khai:**
 
 - Có 2 cách để cài đặt Apache
 
@@ -78,9 +78,16 @@ make
 make install
 ```
 
-**Phần 2: Thiết lập máy chủ ảo**
+**Kiểm Tra phiên bản của apache:**
+```
+apachectl -v
+```
+![](https://i.imgur.com/pqyZ6n4.png)
 
-Khi sử dụng máy chủ web Apache, ta có thể sử dụng máy chủ ảo để đóng gói chi tiết cấu hình và lưu trữ nhiều hơn một tên miền từ một máy chủ. Ta sẽ thiết lập một tên miền được gọi là ``example.com`` ( Có thể thay thế bằng tên miền khác ) . Với điều kiện là tên miền đã được thuê.
+**Phần 2: Tạo trang web của riêng mình**
+
+- Theo mặc định, Apache đi kèm với một trang web cơ bản (trang web mà ta đã thấy trong bước trước) được bật. Ta có thể sửa đổi nội dung của nó trong /var/www/html hoặc cài đặt bằng cách chỉnh sửa tệp ``Virtual Host`` được tìm thấy trong /etc/apache2/sites-enabled/000-default.conf.
+-  Ta sẽ để cấu hình  ``Virtual Host`` Apache mặc định trỏ đến www.example.com và thiết lập máy chủ tại ``example.com`` .
 
 B1: Tạo thư mục cho ``example.com``
 ```
@@ -89,7 +96,7 @@ mkdir -p /var/www/example.com/html
 
 B2: Gán quyền sở hữu thư mục. 
 ```
-chown -R $USER:$USER /var/www/example.com/html
+chown -R www-data:www-data /var/www/example.com/html
 ```
 
 B3: Chỉnh quyền truy cập
@@ -118,7 +125,8 @@ vi /var/www/example.com/html/index.html
 
 Lưu tệp khi hoàn thành.
 
-B5: Tạo một tệp máy chủ ảo mới tại: ``/etc/apache2/sites-available/example.com.conf``
+B5: Tạo một tệp Virtual Host để hiển thị những gì ta vừa tạo ở trên:
+
 ```
 vi /etc/apache2/sites-available/example.com.conf
 ```
@@ -168,19 +176,32 @@ Ta sẽ thấy nó hiện như sau:
 
 ![](https://i.imgur.com/6lw7wI6.png)
 
-B10: Khởi động lại Apache để thực hiện các thay đổi của bạn:
+B10: Reload để thực hiện các thay đổi của bạn:
 ```
-systemctl restart apache2
+service apache2 reload
 ```
+
+- Bây là ta truy cập vào địa chỉ IP của Server Web
+```
+http://192.168.230.141
+```
+
+![](https://i.imgur.com/KNkx74X.png)
 
 - Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
 
-- Ta có thể dùng lệnh dưới đây để show ra cấu hình file ``virtualhost``:
-```
-apache2ctl -S
-```
+**Phần 3: Cấu hình với tên miền**
 
-**Cấu hình SSL**
+- Vì ta không có tên miền thật nên ta sẽ phải điền tên miền ta vừa tạo trong Virtual Host vào trong file ``host``
+- Đường dẫn: ``C:\Windows\System32\drivers\etc``
+
+- Truy cập vào file ``host`` ta điền:
+
+![](https://i.imgur.com/nAYteUk.png)
+
+- Bây giờ ta có thể truy cập vào Server Web bằng tên miền ``http://www.example.com/``
+
+**Phần 4: Cấu hình SSL**
 
 B1: kích hoạt ssl.
 ```
@@ -189,7 +210,7 @@ a2enmod ssl
 
 B2: kích hoạt file default-ssl
 
-- Tệp cấu hình HTTPS mặc định trong /etc/apache2/sites-av Available / default- ssl.conf . Để Apache2 cung cấp HTTPS
+- Kích hoạt tệp cấu hình HTTPS mặc định trong ``/etc/apache2/sites-available/default-ssl.conf`` . Để Apache2 cung cấp HTTPS
 ```
 a2ensite default-ssl
 ```
