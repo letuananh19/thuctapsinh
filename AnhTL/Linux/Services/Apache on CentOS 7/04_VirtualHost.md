@@ -1,5 +1,6 @@
 # Virtual host
 
+
 ### 1. Khái niệm
 
 **Virtual Host** là một cấu hình trong Apache để cho phép nhiều domain cùng chạy trên một máy chủ. 
