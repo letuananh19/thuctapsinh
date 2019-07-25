@@ -63,7 +63,7 @@ Apache web server là lựa chọn khá tối ưu nếu ta muốn vận hành we
 
 - Quá nhiều tùy chọn trong thiết lập gây ra các điểm yếu về bảo mật.
 
-### <a name="4"> 4. Các file/thư mục quan trọng của Apache </a>
+### <a name="4"> 4. Các file/thư mục quan trọng của Apache trên Ubuntu </a>
 
 **Nội dung:**
 
