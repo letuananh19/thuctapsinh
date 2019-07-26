@@ -35,7 +35,7 @@
     ![](https://i.imgur.com/uj7Fo6w.png)
 
   - Trong đó:
-     - ``HTTPS``: Nó sẽ quét cứ 5 phút 1 lần tới ``https`` của trang web
+     - ``HTTPS``: Nó sẽ quét giao thức ``https`` của trang web
      - ``Keyword``: Nó sẽ gửi thông báo về gmail, telegram... khi có 1 một từ khóa ta cài đặt từ trước xuất hiện trên trang web, hoặc ngược lại ( do ta setup ).
      - ``Ping``: Nó sẽ ping tới trang web của ta để xem địa chỉ ip của ta có ổn định không.
      - ``Port``: Nó sẽ quét port của trang web, để xem port được bật, tắt khi nào.
