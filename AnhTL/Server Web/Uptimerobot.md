@@ -62,7 +62,6 @@ Khi vào ``+ Add New Monitor`` ta có 2 phần cần chú ý:
 
 Ở đây ta chia làm 3 phần:
 
-Trong đó:
 **Phần 1:**
 
 -  ``UP MONITORS``: 1 có nghĩa là tương ứng với số sang web ta theo dõi, Nhưng với điều kiện là vẫn hoạt động bình thường. Khi ta add thêm 1 trang web nữa sẽ là 2.
