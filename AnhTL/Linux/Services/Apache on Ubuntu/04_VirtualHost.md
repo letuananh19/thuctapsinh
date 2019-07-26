@@ -3,6 +3,13 @@
 - Theo mặc định, Apache đi kèm với một trang web cơ bản (trang web mà ta đã thấy trong bước trước) được bật. Ta có thể sửa đổi nội dung của nó trong /var/www/html hoặc cài đặt bằng cách chỉnh sửa tệp ``Virtual Host`` được tìm thấy trong /etc/apache2/sites-enabled/000-default.conf.
 -  Ta sẽ để cấu hình  ``Virtual Host`` Apache mặc định trỏ đến www.example.com và thiết lập máy chủ tại ``example.com`` .
 
+**Ta có mô hình:**
+
+![](https://i.imgur.com/oCLCxTz.png)
+
+![](https://i.imgur.com/lhbfAmz.png)
+
+
 **Phần 1: Tạo trang web cho riêng mình:**
 
 B1: Tạo thư mục cho ``example.com``
