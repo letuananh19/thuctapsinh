@@ -43,14 +43,15 @@
 
 ![](https://i.imgur.com/Ox3qUuN.png)
 
-Trong đó:
-**1**
+Khi vào ``+ Add New Monitor`` ta có 2 phần cần chú ý:
+
+**Phần 1:**
 - Monitor Type*: là kiểu theo dõi.
 - Friendly Name*: Là tên hiển thị thay thế cho đường dẫn.
-- URL (or IP)*: là Ta điền địa chỉ IP hoặc đường dẫn trang web ta muốn theo dõi.
+- URL (or IP)*: Là Ta điền địa chỉ IP hoặc đường dẫn trang web ta muốn theo dõi.
 - Monitoring Interval*: Là thời gian giám sát trang web. Có nghĩa là cứ sau 5 phút nó sẽ quét trang web của ta 1 lần để xem có vấn đề gì xảy ra không ( ở đây ta để 5 minutes ).
 
-**2**
+**Phần 2:**
 - Ở đây ta tích vào gmail của ta, để khi có vấn đề xảy ra nó sẽ báo về đúng địa chỉ gmail ấy ( ta có thể add thêm 1 số ứng dụng để nó có thể gửi cảnh báo về ở trong phần ``My Settings``)
 
   - Cuối cùng sau khi lựa chọn xong ta nhấn ``Create Monitor`` để tạo:
@@ -59,10 +60,10 @@ Trong đó:
 
 ![](https://i.imgur.com/bHkQxW1.png)
 
-Ta chia làm 3 phần:
+Ở đây ta chia làm 3 phần:
 
 Trong đó:
-**1**
+**Phần 1:**
 
 -  ``UP MONITORS``: 1 có nghĩa là tương ứng với số sang web ta theo dõi, Nhưng với điều kiện là vẫn hoạt động bình thường. Khi ta add thêm 1 trang web nữa sẽ là 2.
     ![](https://i.imgur.com/sLtRqOW.png)
@@ -75,11 +76,11 @@ Trong đó:
 
     ![](https://i.imgur.com/VKNZerJ.png)
     
-**2**
+**Phần 2:**
 - Phần ``Overall Uptime``: là tổng thời gian hoạt động của trang web.
 -  ``Latest downtime``: Hiển thị thời gian từ lúc trang web không hoạt động cho đến nay
 
-**3**
+**Phần 3:**
 - Trong phần này sẽ hiển thị trạng thái, thời gian về trang web ta theo dõi.
 
     ![](https://i.imgur.com/o4wvRuu.png)
