@@ -92,14 +92,16 @@ Trong đó:
 - ``Duration``: Nói lên thời gian của lần thay đổi trạng thái gần nhất.
 
 ### 2. Chỉnh múi giờ.
-![](https://i.imgur.com/6fdf86y.png)
 
 - Để chỉnh múi giờ ta có thể vào phần ``My settings``
 
+![](https://i.imgur.com/ypDekCJ.png)
 
 ### 3. Nhận thông báo
 
 - Cũng ở phần ``My settings`` ta có thể add thêm cảnh báo về các trang khác nhau.
+
+![](https://i.imgur.com/jvUnOWL.png)
 
 ![](https://i.imgur.com/8UHQDUQ.png)
 
