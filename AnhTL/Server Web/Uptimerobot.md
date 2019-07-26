@@ -46,10 +46,10 @@
 Khi vào ``+ Add New Monitor`` ta có 2 phần cần chú ý:
 
 **Phần 1:**
-- Monitor Type*: là kiểu theo dõi.
-- Friendly Name*: Là tên hiển thị thay thế cho đường dẫn.
-- URL (or IP)*: Là Ta điền địa chỉ IP hoặc đường dẫn trang web ta muốn theo dõi.
-- Monitoring Interval*: Là thời gian giám sát trang web. Có nghĩa là cứ sau 5 phút nó sẽ quét trang web của ta 1 lần để xem có vấn đề gì xảy ra không ( ở đây ta để 5 minutes ).
+- ``Monitor Type*``: là kiểu theo dõi.
+- ``Friendly Name*``: Là tên hiển thị thay thế cho đường dẫn.
+- ``URL (or IP)*``: Là Ta điền địa chỉ IP hoặc đường dẫn trang web ta muốn theo dõi.
+- ``Monitoring Interval*``: Là thời gian giám sát trang web. Có nghĩa là cứ sau 5 phút nó sẽ quét trang web của ta 1 lần để xem có vấn đề gì xảy ra không ( ở đây ta để 5 minutes ).
 
 **Phần 2:**
 - Ở đây ta tích vào gmail của ta, để khi có vấn đề xảy ra nó sẽ báo về đúng địa chỉ gmail ấy ( ta có thể add thêm 1 số ứng dụng để nó có thể gửi cảnh báo về ở trong phần ``My Settings``)
