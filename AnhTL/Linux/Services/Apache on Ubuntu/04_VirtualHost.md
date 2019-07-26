@@ -90,6 +90,26 @@ apache2ctl configtest
 ```
 Ta sẽ thấy nó hiện như sau:
 
+![](https://i.imgur.com/P1Tcti7.png)
+
+Tuy nhiên đây là lỗi phổ biến trong Ubuntu 18.04:
+
+Để khắc phục ta dùng 3 lệnh này để khắc phục:
+```
+echo "ServerName example.com" | sudo tee /etc/apache2/conf-available/servername.conf
+```
+```
+a2enconf servername
+```
+```
+systemctl reload apache2
+```
+
+Bây giờ ta dùng lại lệnh để kiểm tra:
+```
+apache2ctl configtest
+```
+
 ![](https://i.imgur.com/6lw7wI6.png)
 
 B10: Reload để thực hiện các thay đổi của bạn:
