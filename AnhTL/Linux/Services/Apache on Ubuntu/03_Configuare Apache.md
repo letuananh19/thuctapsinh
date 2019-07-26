@@ -1,11 +1,5 @@
 # Cấu hình Apache cơ bản
 
-**Ta có mô hình:**
-
-![](https://i.imgur.com/oCLCxTz.png)
-
-![](https://i.imgur.com/lhbfAmz.png)
-
 **Phần 1: Triển khai:**
 
 - Có 2 cách để cài đặt Apache
