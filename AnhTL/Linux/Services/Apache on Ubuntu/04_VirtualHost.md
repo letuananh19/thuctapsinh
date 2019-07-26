@@ -124,9 +124,10 @@ http://192.168.230.141
 
 ![](https://i.imgur.com/KNkx74X.png)
 
-- Như vậy là ta đã setup Apache với tên miền. Ta có thể kiểm tra điều này bằng cách nhập: http://example.com
+- Như vậy là ta đã setup Apache thành công của riêng mình.
 
 **Phần 2: Cấu hình với tên miền:**
+- ``Nếu có tên miền thì bỏ qua phần này!``
 
 - Vì ta không có tên miền thật nên ta sẽ phải điền tên miền ta vừa tạo trong Virtual Host vào trong file ``host``
 - Đường dẫn: ``C:\Windows\System32\drivers\etc``
@@ -138,3 +139,41 @@ http://192.168.230.141
 - Bây giờ ta có thể truy cập vào Server Web bằng tên miền ``http://www.example.com/``
 
 ![](https://i.imgur.com/i6AazPs.png)
+
+**Phần 3: Một số lệnh quản lý Apache phổ biến**
+
+**3.1**: Sử dụng lệnh này là sudo để khởi động máy chủ Apache.
+
+```
+sudo systemctl start apache2
+```
+
+Sử dụng lệnh này để dừng máy chủ Apache khi nó ở chế độ khởi động.
+
+```
+sudo systemctl stop apache2
+```
+
+Sử dụng lệnh này để dừng và sau đó khởi động lại dịch vụ Apache.
+
+```
+sudo systemctl restart apache2
+```
+
+Sử dụng lệnh này để áp dụng các thay đổi cấu hình mà không cần khởi động lại kết nối.
+
+```
+sudo systemctl reload apache2
+```
+
+Sử dụng lệnh này để cho phép Apache được khởi động mỗi khi ta khởi động hệ thống của mình.
+
+```
+sudo systemctl enable apache2
+```
+
+Sử dụng lệnh này để tắt nếu ta đã thiết lập Apache để được khởi động mỗi khi bạn khởi động hệ thống của mình.
+
+```
+sudo systemctl disable apache2
+```
