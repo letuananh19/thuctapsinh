@@ -91,14 +91,17 @@ Trong đó:
 - ``Reason``: Cũng hiển thị trạng thái của trang web nhưng dưới dạng ``lý do``.
 - ``Duration``: Nói lên thời gian của lần thay đổi trạng thái gần nhất.
 
-### 2. My settings
+### 2. Chỉnh múi giờ.
 ![](https://i.imgur.com/6fdf86y.png)
 
-- Để chỉnh múi giờ và add thêm cảnh báo về các trang khác nhau ta có thể vào phần ``My settings``
+- Để chỉnh múi giờ ta có thể vào phần ``My settings``
 
-![](https://i.imgur.com/8UHQDUQ.png)
 
 ### 3. Nhận thông báo
+
+- Cũng ở phần ``My settings`` ta có thể add thêm cảnh báo về các trang khác nhau.
+
+![](https://i.imgur.com/8UHQDUQ.png)
 
 - Khi uptime nhận thấy trang web có thay đổi trạng thái thì nó sẽ báo về gmail, telegram...(tùy theo ta chỉnh)
 
